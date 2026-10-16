@@ -31,3 +31,4 @@ scripts/update-frontend-file-zos.sh
 **/datasets.yaml
 .gradle/
 .bobz
+src/base/ims/java/build/
