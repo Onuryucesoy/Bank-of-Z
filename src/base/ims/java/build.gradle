@@ -37,4 +37,12 @@ dependencies {
     implementation 'com.ibm.ims:udb:15.166'
     implementation 'com.ibm.jzos:ibmjzos:2.4.11.3'
     implementation 'javax.xml.bind:jaxb-api:2.4.0-b180830.0359'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.2'
+    testRuntimeOnly 'com.h2database:h2:2.2.224'
+}
+
+test {
+    useJUnitPlatform()
 }
