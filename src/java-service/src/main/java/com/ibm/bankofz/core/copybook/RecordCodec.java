@@ -64,7 +64,34 @@ public final class RecordCodec {
                 put(out, s, values.get(s.key()));
             }
         }
+        // A base item and an overlapping REDEFINES view supplied with
+        // different values would otherwise silently keep only the view's bytes.
+        for (Map.Entry<String, String> e : values.entrySet()) {
+            Copybook.Slot s = slots.get(e.getKey());
+            if (s.field().isFiller() || s.field().usage() == Usage.POINTER) {
+                continue;
+            }
+            String stored;
+            try {
+                stored = get(out, s);
+            } catch (CodecException ex) {
+                stored = null;
+            }
+            if (stored == null || !sameValue(s, e.getValue(), stored)) {
+                throw new CodecException(e.getKey() + " = [" + e.getValue() + "] conflicts with an overlapping"
+                        + " REDEFINES item supplied in the same record (stored [" + stored + "])");
+            }
+        }
         return out;
+    }
+
+    /** Value equality as COBOL sees it: numeric by value, text ignoring trailing spaces. */
+    public static boolean sameValue(Copybook.Slot slot, String expected, String actual) {
+        if (slot.field().pic() != null && slot.field().pic().numeric()) {
+            BigDecimal w = expected == null || expected.isBlank() ? BigDecimal.ZERO : new BigDecimal(expected.trim());
+            return w.compareTo(new BigDecimal(actual)) == 0;
+        }
+        return Ebcdic.rtrim(expected == null ? "" : expected).equals(Ebcdic.rtrim(actual));
     }
 
     /**

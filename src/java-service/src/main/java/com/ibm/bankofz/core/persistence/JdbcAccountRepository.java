@@ -6,7 +6,7 @@ import com.ibm.bankofz.core.model.AccountKey;
 import com.ibm.bankofz.core.model.AccountRow;
 import com.ibm.bankofz.core.model.CustomerKey;
 
-import java.sql.Connection;
+import java.math.BigDecimal;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -22,11 +22,16 @@ public final class JdbcAccountRepository implements AccountRepository {
             + "ACCOUNT_NUMBER, ACCOUNT_TYPE, ACCOUNT_INTEREST_RATE, ACCOUNT_OPENED, ACCOUNT_OVERDRAFT_LIMIT, "
             + "ACCOUNT_LAST_STATEMENT, ACCOUNT_NEXT_STATEMENT, ACCOUNT_AVAILABLE_BALANCE, ACCOUNT_ACTUAL_BALANCE";
 
-    private final DataSource dataSource;
+    private final Connections connections;
     private final String table;
 
+    /** Auto-commit per statement; use the {@link Connections} constructor to join a {@link UnitOfWork}. */
     public JdbcAccountRepository(DataSource dataSource, String schema) {
-        this.dataSource = dataSource;
+        this(Connections.autoCommit(dataSource), schema);
+    }
+
+    public JdbcAccountRepository(Connections connections, String schema) {
+        this.connections = connections;
         this.table = Sql.requireIdentifier(schema) + ".ACCOUNT";
     }
 
@@ -64,15 +69,25 @@ public final class JdbcAccountRepository implements AccountRepository {
     }
 
     @Override
-    public int update(Account account) {
+    public Optional<Account> findForUpdate(AccountKey key) {
+        return query("SELECT " + COLUMNS + " FROM " + table
+                + " WHERE ACCOUNT_SORTCODE = ? AND ACCOUNT_NUMBER = ? FOR UPDATE",
+                key.sortCode(), key.accountNumberText()).stream().findFirst();
+    }
+
+    @Override
+    public int updateDetails(Account account) {
         AccountRow r = AccountRowMapper.toRow(account);
         return execute("UPDATE " + table + " SET ACCOUNT_TYPE = ?, ACCOUNT_INTEREST_RATE = ?, "
-                + "ACCOUNT_OVERDRAFT_LIMIT = ?, ACCOUNT_LAST_STATEMENT = ?, ACCOUNT_NEXT_STATEMENT = ?, "
-                + "ACCOUNT_AVAILABLE_BALANCE = ?, ACCOUNT_ACTUAL_BALANCE = ? "
+                + "ACCOUNT_OVERDRAFT_LIMIT = ? WHERE ACCOUNT_SORTCODE = ? AND ACCOUNT_NUMBER = ?",
+                r.accountType(), r.interestRate(), r.overdraftLimit(), r.sortCode(), r.accountNumber());
+    }
+
+    @Override
+    public int updateBalances(AccountKey key, BigDecimal availableBalance, BigDecimal actualBalance) {
+        return execute("UPDATE " + table + " SET ACCOUNT_AVAILABLE_BALANCE = ?, ACCOUNT_ACTUAL_BALANCE = ? "
                 + "WHERE ACCOUNT_SORTCODE = ? AND ACCOUNT_NUMBER = ?",
-                r.accountType(), r.interestRate(), r.overdraftLimit(), Sql.date(r.lastStatement()),
-                Sql.date(r.nextStatement()), r.availableBalance(), r.actualBalance(), r.sortCode(),
-                r.accountNumber());
+                availableBalance, actualBalance, key.sortCode(), key.accountNumberText());
     }
 
     @Override
@@ -82,7 +97,7 @@ public final class JdbcAccountRepository implements AccountRepository {
     }
 
     private List<Account> query(String sql, Object... args) {
-        try (Connection c = dataSource.getConnection(); PreparedStatement ps = c.prepareStatement(sql)) {
+        try (Connections.Lease l = connections.lease(); PreparedStatement ps = l.connection().prepareStatement(sql)) {
             JdbcCustomerRepository.bind(ps, args);
             try (ResultSet rs = ps.executeQuery()) {
                 List<Account> out = new ArrayList<>();
@@ -103,7 +118,7 @@ public final class JdbcAccountRepository implements AccountRepository {
     }
 
     private int execute(String sql, Object... args) {
-        try (Connection c = dataSource.getConnection(); PreparedStatement ps = c.prepareStatement(sql)) {
+        try (Connections.Lease l = connections.lease(); PreparedStatement ps = l.connection().prepareStatement(sql)) {
             JdbcCustomerRepository.bind(ps, args);
             return ps.executeUpdate();
         } catch (SQLException e) {

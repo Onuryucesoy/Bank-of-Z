@@ -17,7 +17,11 @@ public interface CustomerRepository {
     /** CRECUST: INSERT INTO CUSTOMER. */
     void insert(Customer customer);
 
-    /** UPDCUST: UPDATE CUSTOMER SET ... ; returns rows affected. */
+    /**
+     * UPDCUST: updates title, names, DOB, phone, address and status only;
+     * the key, created date and credit-score fields are left as stored.
+     * Returns rows affected.
+     */
     int update(Customer customer);
 
     /** DELCUS: DELETE FROM CUSTOMER WHERE ...; returns rows affected. */

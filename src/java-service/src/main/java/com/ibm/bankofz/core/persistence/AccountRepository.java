@@ -4,6 +4,7 @@ import com.ibm.bankofz.core.model.Account;
 import com.ibm.bankofz.core.model.AccountKey;
 import com.ibm.bankofz.core.model.CustomerKey;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,8 +26,18 @@ public interface AccountRepository {
     /** CREACC: INSERT INTO ACCOUNT. */
     void insert(Account account);
 
-    /** UPDACC / DBCRFUN / XFRFUN: UPDATE ACCOUNT SET ...; returns rows affected. */
-    int update(Account account);
+    /**
+     * DBCRFUN / XFRFUN read before changing balances: locks the row for the
+     * rest of the caller's {@link UnitOfWork} so a concurrent payment cannot
+     * be lost (COBOL reads under CS without a lock).
+     */
+    Optional<Account> findForUpdate(AccountKey key);
+
+    /** UPDACC: only ACCOUNT_TYPE, ACCOUNT_INTEREST_RATE and ACCOUNT_OVERDRAFT_LIMIT; returns rows affected. */
+    int updateDetails(Account account);
+
+    /** DBCRFUN / XFRFUN: only the two balances; returns rows affected. */
+    int updateBalances(AccountKey key, BigDecimal availableBalance, BigDecimal actualBalance);
 
     /** DELACC: DELETE FROM ACCOUNT ...; returns rows affected. */
     int delete(AccountKey key);

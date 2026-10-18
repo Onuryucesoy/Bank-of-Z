@@ -76,4 +76,23 @@ class CopybookParserTest {
         assertTrue(Copybook.slots(t).containsKey("G(2)"));
         assertEquals(Usage.PACKED, t.children().get(0).usage());
     }
+
+    @Test
+    void conflictingRedefinesValuesAreRejectedPerOccurrence() throws IOException {
+        RecordCodec codec = new RecordCodec(
+                CopybookParser.parse(RepoPaths.resolve("src/base/cics/copy/INQACCCU.cpy")).primary());
+        java.util.Map<String, String> ok = new java.util.LinkedHashMap<>();
+        ok.put("COMM-OPENED(1)", "01022020");
+        ok.put("COMM-OPENED(2)", "15062021");
+        ok.put("COMM-OPENED-DAY(2)", "15");
+        java.util.Map<String, String> decoded = codec.decode(codec.encode(ok));
+        assertEquals("1", decoded.get("COMM-OPENED-DAY(1)"));
+        assertEquals("15", decoded.get("COMM-OPENED-DAY(2)"));
+        assertEquals("2021", decoded.get("COMM-OPENED-YEAR(2)"));
+
+        java.util.Map<String, String> conflict = new java.util.LinkedHashMap<>(ok);
+        conflict.put("COMM-OPENED-DAY(2)", "31");
+        org.junit.jupiter.api.Assertions.assertThrows(com.ibm.bankofz.core.codec.CodecException.class,
+                () -> codec.encode(conflict));
+    }
 }

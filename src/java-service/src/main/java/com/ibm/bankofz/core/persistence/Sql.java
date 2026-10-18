@@ -32,9 +32,6 @@ final class Sql {
     }
 
     static String requireIdentifier(String schema) {
-        if (!schema.matches("[A-Za-z][A-Za-z0-9_]{0,127}")) {
-            throw new IllegalArgumentException("invalid schema name: " + schema);
-        }
-        return schema;
+        return SqlIdentifier.require(schema);
     }
 }

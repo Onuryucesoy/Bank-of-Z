@@ -2,6 +2,7 @@ package com.ibm.bankofz.core.id;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.ibm.bankofz.core.persistence.FrozenDdl;
 
@@ -58,6 +59,43 @@ class IdAllocatorTest {
     void missingControlRowFailsLikeCrecustFailCode4() throws Exception {
         IdAllocator ids = new ControlTableIdAllocator(FrozenDdl.newDatabase(), "BANKZ");
         assertThrows(IdAllocationException.class, () -> ids.allocate(CUST));
+    }
+
+    @Test
+    void controlTableAllocatorStopsAtDb2IntegerLimitWithoutCorruptingTheRow() throws Exception {
+        DataSource ds = FrozenDdl.newDatabase();
+        exec(ds, "INSERT INTO BANKZ.CONTROL VALUES ('BANKZCUST987654', 2147483646, NULL)");
+        IdAllocator ids = new ControlTableIdAllocator(ds, "BANKZ");
+        assertEquals(2147483647L, ids.allocate(CUST));
+        IdAllocationException e = assertThrows(IdAllocationException.class, () -> ids.allocate(CUST));
+        assertTrue(e.getMessage().contains("SequenceIdAllocator"), e.getMessage());
+        assertEquals(2147483647L, ids.current(CUST));
+    }
+
+    @Test
+    void sequenceCutoverContinuesAfterControlValue() throws Exception {
+        DataSource ds = FrozenDdl.newDatabase();
+        exec(ds, "INSERT INTO BANKZ.CONTROL VALUES ('BANKZCUST987654', 2147483647, NULL)");
+        exec(ds, "INSERT INTO BANKZ.CONTROL VALUES ('BANKZACCT987654', 1000, NULL)");
+        SequenceIdAllocator seq = SequenceIdAllocator.withDefaults(ds, "BANKZ");
+        seq.createFromControl(CUST, CounterName.account("987654"));
+        assertEquals(2147483648L, seq.allocate(CUST), "full PIC 9(10) range after cutover");
+        assertEquals(1001, seq.allocate(CounterName.account("987654")));
+    }
+
+    @Test
+    void sequenceCutoverRefusesMissingControlRow() throws Exception {
+        SequenceIdAllocator seq = SequenceIdAllocator.withDefaults(FrozenDdl.newDatabase(), "BANKZ");
+        assertThrows(IdAllocationException.class, () -> seq.createFromControl(CUST));
+    }
+
+    @Test
+    void sqlIdentifiersAreValidated() throws Exception {
+        DataSource ds = FrozenDdl.newDatabase();
+        assertThrows(IllegalArgumentException.class, () -> new ControlTableIdAllocator(ds, "BANKZ.X; --"));
+        assertThrows(IllegalArgumentException.class, () -> SequenceIdAllocator.withDefaults(ds, "1BANKZ"));
+        assertThrows(IllegalArgumentException.class, () -> new SequenceIdAllocator(ds, "BANKZ",
+                java.util.Map.of(CounterName.CUSTOMER_PREFIX, "SEQ X")));
     }
 
     @Test

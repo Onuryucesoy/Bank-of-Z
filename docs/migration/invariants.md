@@ -35,9 +35,16 @@ with `BANKZACCT`.
   hand out the same number. Until CRECUST is retired, exactly one side
   allocates for a counter (CRECUST stays the writer through the read-only
   Phase 2; Java takes over only when create-customer is cut over).
-- `SequenceIdAllocator` (Db2 `SEQUENCE`, DDL in
-  `src/java-service/src/main/resources/db2/id-sequences.sql`) is the
-  post-cutover mechanism, started at `CONTROL_VALUE_NUM + 1`.
+- `CONTROL_VALUE_NUM` is a Db2 `INTEGER` (CRECUST's host variable is
+  `S9(9) COMP`), so the CONTROL mechanism, COBOL or Java, stops at
+  2,147,483,647 even though `CUSTOMER-NUMBER` is `PIC 9(10)`.
+  `ControlTableIdAllocator` refuses to go past that limit and leaves the row
+  untouched.
+- `SequenceIdAllocator` (`BIGINT` Db2 `SEQUENCE`) is the post-cutover
+  mechanism. `SequenceIdAllocator.createFromControl(...)` creates each
+  sequence at its `CONTROL_VALUE_NUM + 1` and fails if the CONTROL row is
+  missing. Sequences are never created with a fixed start value, so
+  existing customer and account numbers cannot be reissued.
 - Numbers are unique and increasing, not dense. Exceeding `PIC 9(10)`
   (`9(8)` for accounts) is an allocation failure.
 
@@ -111,8 +118,11 @@ transaction with the same tolerance for already-deleted rows.
   when `COMM-FACILTYPE = 496`, which the z/OS Connect `depositToAccount`
   mapping always sets), `TFR` transfer, cheque `CHA`/`CHF`/`CHI`/`CHO`,
   `OCS` standing order.
-- Java: `ProcTranRepository.insert` in the caller's transaction,
-  `ProcTranType` for codes. Golden-master comparison treats the reference,
+- Java: run the business write and `ProcTranRepository.insert` on one
+  `UnitOfWork` (pass it as the repositories' `Connections`), so a failed
+  audit insert rolls back the change. Repositories built from a bare
+  `DataSource` auto-commit each statement and are only for reads.
+  `ProcTranType` holds the codes. Golden-master comparison treats the reference,
   date and time as non-deterministic.
 
 ## 5. CICS ↔ IMS customer-ID routing
@@ -136,7 +146,8 @@ transaction with the same tolerance for already-deleted rows.
 | `INQCUST` | Customer number `0000000000` returns a random existing customer; `9999999999` returns the highest-numbered one. Not found → `INQCUST-INQ-SUCCESS 'N'`, fail `'1'`. |
 | `INQACC` | Account `99999999` returns the highest-numbered account. Not found still returns `INQACC-SUCCESS 'Y'` with an empty record — callers detect it from the data. |
 | `INQACCCU` | Max 20 accounts (`OCCURS 1 TO 20 DEPENDING ON`); fail `'4'` when the customer is missing. |
-| `UPDCUST` | Validates title against a fixed list (fail `'T'`) and non-blank first name (`'4'`); never updates the created date or key. |
+| `UPDCUST` | Validates title against a fixed list (fail `'T'`) and non-blank first name (`'4'`). The `UPDATE` sets only title, names, DOB, phone, address and status; it never touches the key, created date, credit score or review date (`CustomerRepository.update` matches). |
+| `UPDACC` | The `UPDATE` sets only type, interest rate and overdraft limit (`AccountRepository.updateDetails`); balances change only through DBCRFUN/XFRFUN (`findForUpdate` + `updateBalances` in one `UnitOfWork`). |
 | `XFRFUN` | Amount ≤ 0 → fail `'4'` with no SQL. Retries Db2 deadlock/timeout `-911` with 1-second delays; explicit `SYNCPOINT ROLLBACK` on partial failure so both legs commit or neither does. |
 | `DBCRFUN` | Fail `'1'` account not found, `'2'` SQL error, `'3'` insufficient available funds on a payment debit, `'4'` debit/credit refused for mortgage/loan account types. |
 | All CICS API calls | CCSID 037; numeric COMMAREA fields are zoned DISPLAY, so the API layer formats numbers (e.g. `formatNumber` to 10 digits for `DELCUS` customer numbers). |

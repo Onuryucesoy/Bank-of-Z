@@ -1,10 +1,8 @@
 package com.ibm.bankofz.core.golden;
 
-import com.ibm.bankofz.core.codec.Ebcdic;
 import com.ibm.bankofz.core.copybook.Copybook;
 import com.ibm.bankofz.core.copybook.RecordCodec;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -66,10 +64,6 @@ public final class GoldenMasterComparator {
     }
 
     private static boolean same(Copybook.Slot slot, String want, String got) {
-        if (slot.field().pic() != null && slot.field().pic().numeric()) {
-            BigDecimal w = want == null || want.isBlank() ? BigDecimal.ZERO : new BigDecimal(want.trim());
-            return w.compareTo(new BigDecimal(got)) == 0;
-        }
-        return Ebcdic.rtrim(want == null ? "" : want).equals(Ebcdic.rtrim(got));
+        return RecordCodec.sameValue(slot, want, got);
     }
 }

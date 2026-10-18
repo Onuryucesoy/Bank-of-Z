@@ -5,7 +5,6 @@ import com.ibm.bankofz.core.model.Customer;
 import com.ibm.bankofz.core.model.CustomerKey;
 import com.ibm.bankofz.core.model.CustomerRow;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -20,11 +19,16 @@ public final class JdbcCustomerRepository implements CustomerRepository {
             + "CUSTOMER_ADDR_LINE1, CUSTOMER_ADDR_LINE2, CUSTOMER_CITY, CUSTOMER_POSTCODE, CUSTOMER_COUNTRY, "
             + "CUSTOMER_STATUS, CUSTOMER_CREATED_DATE, CUSTOMER_CREDIT_SCORE, CUSTOMER_CS_REVIEW_DATE";
 
-    private final DataSource dataSource;
+    private final Connections connections;
     private final String table;
 
+    /** Auto-commit per statement; use the {@link Connections} constructor to join a {@link UnitOfWork}. */
     public JdbcCustomerRepository(DataSource dataSource, String schema) {
-        this.dataSource = dataSource;
+        this(Connections.autoCommit(dataSource), schema);
+    }
+
+    public JdbcCustomerRepository(Connections connections, String schema) {
+        this.connections = connections;
         this.table = Sql.requireIdentifier(schema) + ".CUSTOMER";
     }
 
@@ -49,17 +53,16 @@ public final class JdbcCustomerRepository implements CustomerRepository {
                 r.country(), r.status(), r.createdDate(), r.creditScore(), r.creditScoreReviewDate());
     }
 
+    /** Same SET list as UPDCUST: never the key, created date, credit score or review date. */
     @Override
     public int update(Customer customer) {
         CustomerRow r = CustomerRowMapper.toRow(customer);
         return execute("UPDATE " + table + " SET CUSTOMER_TITLE = ?, CUSTOMER_FIRST_NAME = ?, "
                 + "CUSTOMER_LAST_NAME = ?, CUSTOMER_DATE_OF_BIRTH = ?, CUSTOMER_PHONE = ?, CUSTOMER_ADDR_LINE1 = ?, "
                 + "CUSTOMER_ADDR_LINE2 = ?, CUSTOMER_CITY = ?, CUSTOMER_POSTCODE = ?, CUSTOMER_COUNTRY = ?, "
-                + "CUSTOMER_STATUS = ?, CUSTOMER_CREDIT_SCORE = ?, CUSTOMER_CS_REVIEW_DATE = ? "
-                + "WHERE CUSTOMER_SORTCODE = ? AND CUSTOMER_NUMBER = ?",
+                + "CUSTOMER_STATUS = ? WHERE CUSTOMER_SORTCODE = ? AND CUSTOMER_NUMBER = ?",
                 r.title(), r.firstName(), r.lastName(), r.dateOfBirth(), r.phone(), r.addressLine1(),
-                r.addressLine2(), r.city(), r.postcode(), r.country(), r.status(), r.creditScore(),
-                r.creditScoreReviewDate(), r.sortCode(), r.customerNumber());
+                r.addressLine2(), r.city(), r.postcode(), r.country(), r.status(), r.sortCode(), r.customerNumber());
     }
 
     @Override
@@ -69,7 +72,7 @@ public final class JdbcCustomerRepository implements CustomerRepository {
     }
 
     private Optional<Customer> queryOne(String sql, Object... args) {
-        try (Connection c = dataSource.getConnection(); PreparedStatement ps = c.prepareStatement(sql)) {
+        try (Connections.Lease l = connections.lease(); PreparedStatement ps = l.connection().prepareStatement(sql)) {
             bind(ps, args);
             try (ResultSet rs = ps.executeQuery()) {
                 return rs.next() ? Optional.of(CustomerRowMapper.fromRow(row(rs))) : Optional.empty();
@@ -80,7 +83,7 @@ public final class JdbcCustomerRepository implements CustomerRepository {
     }
 
     private int execute(String sql, Object... args) {
-        try (Connection c = dataSource.getConnection(); PreparedStatement ps = c.prepareStatement(sql)) {
+        try (Connections.Lease l = connections.lease(); PreparedStatement ps = l.connection().prepareStatement(sql)) {
             bind(ps, args);
             return ps.executeUpdate();
         } catch (SQLException e) {

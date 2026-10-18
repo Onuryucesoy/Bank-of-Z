@@ -5,7 +5,6 @@ import com.ibm.bankofz.core.model.AccountKey;
 import com.ibm.bankofz.core.model.ProcTran;
 import com.ibm.bankofz.core.model.ProcTranRow;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,11 +18,16 @@ public final class JdbcProcTranRepository implements ProcTranRepository {
     private static final String COLUMNS = "PROCTRAN_EYECATCHER, PROCTRAN_SORTCODE, PROCTRAN_NUMBER, PROCTRAN_DATE, "
             + "PROCTRAN_TIME, PROCTRAN_REF, PROCTRAN_TYPE, PROCTRAN_DESC, PROCTRAN_AMOUNT";
 
-    private final DataSource dataSource;
+    private final Connections connections;
     private final String table;
 
+    /** Auto-commit per statement; use the {@link Connections} constructor to join a {@link UnitOfWork}. */
     public JdbcProcTranRepository(DataSource dataSource, String schema) {
-        this.dataSource = dataSource;
+        this(Connections.autoCommit(dataSource), schema);
+    }
+
+    public JdbcProcTranRepository(Connections connections, String schema) {
+        this.connections = connections;
         this.table = Sql.requireIdentifier(schema) + ".PROCTRAN";
     }
 
@@ -31,7 +35,7 @@ public final class JdbcProcTranRepository implements ProcTranRepository {
     public void insert(ProcTran entry) {
         ProcTranRow r = ProcTranRowMapper.toRow(entry);
         String sql = "INSERT INTO " + table + " (" + COLUMNS + ") VALUES (?,?,?,?,?,?,?,?,?)";
-        try (Connection c = dataSource.getConnection(); PreparedStatement ps = c.prepareStatement(sql)) {
+        try (Connections.Lease l = connections.lease(); PreparedStatement ps = l.connection().prepareStatement(sql)) {
             JdbcCustomerRepository.bind(ps, r.eyecatcher(), r.sortCode(), r.accountNumber(), Sql.date(r.date()),
                     r.time(), r.reference(), r.type(), r.description(), r.amount());
             ps.executeUpdate();
@@ -44,7 +48,7 @@ public final class JdbcProcTranRepository implements ProcTranRepository {
     public List<ProcTran> findByAccount(AccountKey account, int limit) {
         String sql = "SELECT " + COLUMNS + " FROM " + table + " WHERE PROCTRAN_SORTCODE = ? AND PROCTRAN_NUMBER = ?"
                 + " ORDER BY PROCTRAN_DATE DESC, PROCTRAN_TIME DESC FETCH FIRST " + Math.max(1, limit) + " ROWS ONLY";
-        try (Connection c = dataSource.getConnection(); PreparedStatement ps = c.prepareStatement(sql)) {
+        try (Connections.Lease l = connections.lease(); PreparedStatement ps = l.connection().prepareStatement(sql)) {
             JdbcCustomerRepository.bind(ps, account.sortCode(), account.accountNumberText());
             try (ResultSet rs = ps.executeQuery()) {
                 List<ProcTran> out = new ArrayList<>();

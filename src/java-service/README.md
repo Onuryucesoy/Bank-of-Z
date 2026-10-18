@@ -9,8 +9,8 @@ service on. It contains **no ported transaction logic**.
 | `copybook` | Fixed-format copybook parser and layout-driven `RecordCodec` (used by the golden-master harness and to generate `docs/migration/data-contracts.md`). |
 | `model` | Records for `CUSTOMER`, `ACCOUNT`, `PROCTRAN` and Db2 rows `CUSTDB2`/`ACCDB2`/`PROCDB2`; `CobolDate`; keys. |
 | `mapper` | Hand-written byte codecs for the core records (cross-checked against the parser) and record ↔ Db2 row mappers. |
-| `persistence` | Repository interfaces + plain JDBC implementations for `BANKZ.CUSTOMER/ACCOUNT/PROCTRAN`. |
-| `id` | `IdAllocator` replacing the `BANKZCUST`/`BANKZACCT` counters: `ControlTableIdAllocator` (coexistence), `SequenceIdAllocator` (post-cutover, see `src/main/resources/db2/id-sequences.sql`), `InMemoryIdAllocator`. |
+| `persistence` | Repository interfaces + plain JDBC implementations for `BANKZ.CUSTOMER/ACCOUNT/PROCTRAN`; `UnitOfWork` shares one connection/transaction across repositories (writes + PROCTRAN audit). |
+| `id` | `IdAllocator` replacing the `BANKZCUST`/`BANKZACCT` counters: `ControlTableIdAllocator` (coexistence), `SequenceIdAllocator` (post-cutover, created from the CONTROL values by `createFromControl`), `InMemoryIdAllocator`. |
 | `service` | Interfaces for the inventoried transactions (INQCUST, INQACC, INQACCCU, CRECUST, UPDCUST, DELCUS, CREACC, UPDACC, DELACC, DBCRFUN, XFRFUN, CRDTAGY1-5, IBGCUDAT, IBACSUM) and `CustomerRouting`. |
 | `golden` | `GoldenMasterComparator`. |
 
