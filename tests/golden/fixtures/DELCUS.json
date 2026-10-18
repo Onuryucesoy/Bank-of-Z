@@ -1,0 +1,67 @@
+{
+  "transaction": "DELCUS",
+  "program": "src/base/cics/cobol/DELCUS.cbl",
+  "interface": "CICS_COMMAREA",
+  "copybook": "src/base/cics/copy/DELCUS.cpy",
+  "record": "DELCUS",
+  "ccsid": 37,
+  "baseline": {
+    "status": "HAND_AUTHORED_UNVALIDATED",
+    "note": "Baseline derived from copybook layout and COBOL source reading; must be re-captured from the live CICS region before Phase 2 shadow comparison (see tests/golden/README.md).",
+    "derivedFrom": [
+      "src/base/cics/copy/DELCUS.cpy",
+      "src/api/src/main/operations/deleteCustomer"
+    ]
+  },
+  "cases": [
+    {
+      "name": "deleted",
+      "description": "DELETE /customers/C1: accounts deleted via DELACC, then customer, then PROCTRAN 'ODC'; response echoes the deleted customer.",
+      "request": {
+        "COMM-SCODE": "987654",
+        "COMM-CUSTNO": "0000000001"
+      },
+      "response": {
+        "COMM-TITLE": "Mr",
+        "COMM-FIRST-NAME": "Andrew",
+        "COMM-LAST-NAME": "Smith",
+        "COMM-DOB-DAY": "15",
+        "COMM-DOB-MONTH": "06",
+        "COMM-DOB-YEAR": "1980",
+        "COMM-PHONE": "01962 815000",
+        "COMM-ADDR-LINE1": "1 High Street",
+        "COMM-ADDR-LINE2": "Hursley",
+        "COMM-CITY": "Winchester",
+        "COMM-POSTCODE": "SO21 2JN",
+        "COMM-COUNTRY": "United Kingdom",
+        "COMM-STATUS": "ACTIVE",
+        "COMM-CREATED-DAY": "01",
+        "COMM-CREATED-MONTH": "02",
+        "COMM-CREATED-YEAR": "2020",
+        "COMM-CREDIT-SCORE": "450",
+        "COMM-CS-REVIEW-DAY": "20",
+        "COMM-CS-REVIEW-MONTH": "02",
+        "COMM-CS-REVIEW-YEAR": "2020",
+        "COMM-EYE": "CUST",
+        "COMM-SCODE": "987654",
+        "COMM-CUSTNO": "0000000001",
+        "COMM-DEL-SUCCESS": "Y",
+        "COMM-DEL-FAIL-CD": " "
+      }
+    },
+    {
+      "name": "not-found",
+      "description": "INQCUST fails: success N, fail code carried from INQCUST ('1').",
+      "request": {
+        "COMM-SCODE": "987654",
+        "COMM-CUSTNO": "9999999998"
+      },
+      "response": {
+        "COMM-SCODE": "987654",
+        "COMM-CUSTNO": "9999999998",
+        "COMM-DEL-SUCCESS": "N",
+        "COMM-DEL-FAIL-CD": "1"
+      }
+    }
+  ]
+}

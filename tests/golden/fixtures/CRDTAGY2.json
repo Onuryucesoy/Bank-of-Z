@@ -1,0 +1,78 @@
+{
+  "transaction": "CRDTAGY2",
+  "program": "src/base/cics/cobol/CRDTAGY2.cbl",
+  "interface": "CICS_CONTAINER",
+  "copybook": "src/base/cics/copy/CUSTOMER.cpy",
+  "record": "CUSTOMER",
+  "ccsid": 37,
+  "baseline": {
+    "status": "HAND_AUTHORED_UNVALIDATED",
+    "note": "Baseline derived from copybook layout and COBOL source reading; must be re-captured from the live CICS region before Phase 2 shadow comparison (see tests/golden/README.md).",
+    "derivedFrom": [
+      "src/base/cics/copy/CUSTOMER.cpy",
+      "src/base/cics/cobol/CRDTAGY2.cbl"
+    ]
+  },
+  "cases": [
+    {
+      "name": "scored",
+      "description": "CRECUST RUN TRANSID OCR2 on channel CIPCREDCHANN; agency delays 1-3s then PUTs the record back with CUSTOMER-CREDIT-SCORE = random 1..998. Score is illustrative.",
+      "request": {
+        "CUSTOMER-TITLE": "Mr",
+        "CUSTOMER-FIRST-NAME": "Andrew",
+        "CUSTOMER-LAST-NAME": "Smith",
+        "CUSTOMER-DOB-DAY": "15",
+        "CUSTOMER-DOB-MONTH": "06",
+        "CUSTOMER-DOB-YEAR": "1980",
+        "CUSTOMER-PHONE": "01962 815000",
+        "CUSTOMER-ADDR-LINE1": "1 High Street",
+        "CUSTOMER-ADDR-LINE2": "Hursley",
+        "CUSTOMER-CITY": "Winchester",
+        "CUSTOMER-POSTCODE": "SO21 2JN",
+        "CUSTOMER-COUNTRY": "United Kingdom",
+        "CUSTOMER-STATUS": "ACTIVE",
+        "CUSTOMER-CREATED-DAY": "18",
+        "CUSTOMER-CREATED-MONTH": "10",
+        "CUSTOMER-CREATED-YEAR": "2026",
+        "CUSTOMER-CREDIT-SCORE": "0",
+        "CUSTOMER-CS-REVIEW-DAY": "00",
+        "CUSTOMER-CS-REVIEW-MONTH": "00",
+        "CUSTOMER-CS-REVIEW-YEAR": "0000",
+        "CUSTOMER-EYECATCHER": "CUST",
+        "CUSTOMER-SORTCODE": "987654",
+        "CUSTOMER-NUMBER": "1001"
+      },
+      "response": {
+        "CUSTOMER-TITLE": "Mr",
+        "CUSTOMER-FIRST-NAME": "Andrew",
+        "CUSTOMER-LAST-NAME": "Smith",
+        "CUSTOMER-DOB-DAY": "15",
+        "CUSTOMER-DOB-MONTH": "06",
+        "CUSTOMER-DOB-YEAR": "1980",
+        "CUSTOMER-PHONE": "01962 815000",
+        "CUSTOMER-ADDR-LINE1": "1 High Street",
+        "CUSTOMER-ADDR-LINE2": "Hursley",
+        "CUSTOMER-CITY": "Winchester",
+        "CUSTOMER-POSTCODE": "SO21 2JN",
+        "CUSTOMER-COUNTRY": "United Kingdom",
+        "CUSTOMER-STATUS": "ACTIVE",
+        "CUSTOMER-CREATED-DAY": "18",
+        "CUSTOMER-CREATED-MONTH": "10",
+        "CUSTOMER-CREATED-YEAR": "2026",
+        "CUSTOMER-CREDIT-SCORE": "223",
+        "CUSTOMER-CS-REVIEW-DAY": "00",
+        "CUSTOMER-CS-REVIEW-MONTH": "00",
+        "CUSTOMER-CS-REVIEW-YEAR": "0000",
+        "CUSTOMER-EYECATCHER": "CUST",
+        "CUSTOMER-SORTCODE": "987654",
+        "CUSTOMER-NUMBER": "1001"
+      },
+      "nonDeterministic": [
+        "CUSTOMER-CREDIT-SCORE"
+      ]
+    }
+  ],
+  "channel": "CIPCREDCHANN",
+  "container": "CIPB",
+  "transid": "OCR2"
+}
