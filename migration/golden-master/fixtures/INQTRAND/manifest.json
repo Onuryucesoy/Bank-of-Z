@@ -1,0 +1,14 @@
+{
+  "asset": "INQTRAND",
+  "synthetic": true,
+  "note": "Hand-made from the generated schemas; replace with z/OS Connect captures in Phase 2 (see ../../README.md)",
+  "requestSchema": "src/api/src/main/zosAssets/INQTRAND/providerFiles/gen/requestSchema.json",
+  "responseSchema": "src/api/src/main/zosAssets/INQTRAND/providerFiles/gen/responseSchema.json",
+  "apiCall": {
+    "operationId": "getTransaction",
+    "method": "GET",
+    "path": "/accounts/3000/transactions/987654-3000-20260312-143000-123456789012",
+    "status": 200,
+    "schema": "Transaction"
+  }
+}

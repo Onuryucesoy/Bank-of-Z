@@ -1,0 +1,17 @@
+{
+  "customerId": "0000000001",
+  "title": "Mr",
+  "firstName": "John",
+  "lastName": "Smith",
+  "dateOfBirth": "1985-06-15",
+  "phoneNumber": "+44 20 7946 0958",
+  "address": {
+    "addressLine1": "123 High Street",
+    "addressLine2": "Apartment 4B",
+    "city": "London",
+    "postalCode": "SW1A 1AA",
+    "country": "United Kingdom"
+  },
+  "customerStatus": "ACTIVE",
+  "createdDate": "2020-01-15T00:00:00Z"
+}

@@ -1,0 +1,2118 @@
+{
+  "commarea": {
+    "INQTRANL-COMMAREA": {
+      "INQTRANL-EYE": "PRTL",
+      "INQTRANL-SORTCODE": 987654,
+      "INQTRANL-ACCNO": 3000,
+      "INQTRANL-FROM-DATE": 20260101,
+      "INQTRANL-TO-DATE": 20260313,
+      "INQTRANL-LIMIT": 50,
+      "INQTRANL-OFFSET": 0,
+      "INQTRANL-TOTAL-COUNT": 2,
+      "INQTRANL-RETURNED-COUNT": 2,
+      "INQTRANL-SUCCESS": "Y",
+      "INQTRANL-TRANSACTIONS": [
+        {
+          "INQTRANL-TRAN-ID": "987654-3000-20260312-143000-123456789012",
+          "INQTRANL-TRAN-SORTCODE": 987654,
+          "INQTRANL-TRAN-ACCNO": 3000,
+          "INQTRANL-TRAN-DATE": 20260312,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 2026,
+            "INQTRANL-TRAN-DATE-MM": 3,
+            "INQTRANL-TRAN-DATE-DD": 12
+          },
+          "INQTRANL-TRAN-TIME": 143000,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 14,
+            "INQTRANL-TRAN-TIME-MM": 30,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 123456789012,
+          "INQTRANL-TRAN-TYPE": "DEB",
+          "INQTRANL-TRAN-DESC": "Payment to ABC Store",
+          "INQTRANL-TRAN-AMOUNT": -50.0
+        },
+        {
+          "INQTRANL-TRAN-ID": "987654-3000-20260310-091500-123456789013",
+          "INQTRANL-TRAN-SORTCODE": 987654,
+          "INQTRANL-TRAN-ACCNO": 3000,
+          "INQTRANL-TRAN-DATE": 20260310,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 2026,
+            "INQTRANL-TRAN-DATE-MM": 3,
+            "INQTRANL-TRAN-DATE-DD": 10
+          },
+          "INQTRANL-TRAN-TIME": 91500,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 9,
+            "INQTRANL-TRAN-TIME-MM": 15,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 123456789013,
+          "INQTRANL-TRAN-TYPE": "CRE",
+          "INQTRANL-TRAN-DESC": "Salary",
+          "INQTRANL-TRAN-AMOUNT": 2500.0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        },
+        {
+          "INQTRANL-TRAN-ID": "",
+          "INQTRANL-TRAN-SORTCODE": 0,
+          "INQTRANL-TRAN-ACCNO": 0,
+          "INQTRANL-TRAN-DATE": 0,
+          "INQTRANL-TRAN-DATE-GRP": {
+            "INQTRANL-TRAN-DATE-YYYY": 0,
+            "INQTRANL-TRAN-DATE-MM": 0,
+            "INQTRANL-TRAN-DATE-DD": 0
+          },
+          "INQTRANL-TRAN-TIME": 0,
+          "INQTRANL-TRAN-TIME-GRP": {
+            "INQTRANL-TRAN-TIME-HH": 0,
+            "INQTRANL-TRAN-TIME-MM": 0,
+            "INQTRANL-TRAN-TIME-SS": 0
+          },
+          "INQTRANL-TRAN-REF": 0,
+          "INQTRANL-TRAN-TYPE": "",
+          "INQTRANL-TRAN-DESC": "",
+          "INQTRANL-TRAN-AMOUNT": 0
+        }
+      ]
+    }
+  }
+}

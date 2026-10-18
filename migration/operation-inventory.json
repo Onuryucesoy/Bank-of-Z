@@ -1,0 +1,1247 @@
+{
+  "generatedBy": "migration/tools/generate_inventories.py",
+  "openapiSpec": "src/api/src/main/api/openapi.yaml",
+  "openapiVersion": "3.0.3",
+  "apiBasePath": "/api",
+  "counts": {
+    "zosAssets": 14,
+    "openapiPaths": 14,
+    "openapiOperations": 17,
+    "cicsAssets": 10,
+    "imsAssets": 4
+  },
+  "openapiOperationsWithoutZosAsset": [],
+  "operations": [
+    {
+      "operation": "CRECUST",
+      "backend": "CICS",
+      "zosAssetType": "cicsCommarea-1.0",
+      "description": "Create Customer CICS Program",
+      "zosAssetPath": "src/api/src/main/zosAssets/CRECUST",
+      "requestSchema": "src/api/src/main/zosAssets/CRECUST/providerFiles/gen/requestSchema.json",
+      "responseSchema": "src/api/src/main/zosAssets/CRECUST/providerFiles/gen/responseSchema.json",
+      "requestLayout": {
+        "sourceFile": "CRECUST.cpy",
+        "sourcePath": "src/base/cics/copy/CRECUST.cpy",
+        "generatedCopybook": "src/api/src/main/zosAssets/CRECUST/providerFiles/gen/CRECUST_request_0.cpy",
+        "topLevel": "CRECUSTZ",
+        "bytes": 403
+      },
+      "responseLayout": {
+        "sourceFile": "CRECUST.cpy",
+        "sourcePath": "src/base/cics/copy/CRECUST.cpy",
+        "generatedCopybook": "src/api/src/main/zosAssets/CRECUST/providerFiles/gen/CRECUST_response_0.cpy",
+        "topLevel": "CRECUSTZ",
+        "bytes": 403
+      },
+      "providerProperties": {
+        "transidUsage": "EIB_ONLY",
+        "transid": "OMEN",
+        "language": "COBOL",
+        "program": "CRECUST",
+        "connectionRef": "bankzCicsConnection",
+        "ccsid": "037"
+      },
+      "cobolProgram": "src/base/cics/cobol/CRECUST.cbl",
+      "programFacts": {
+        "copybooks": [
+          "ABNDINFO",
+          "CEEIGZCT",
+          "CRECUST",
+          "CUSTCTRL",
+          "CUSTOMER",
+          "PROCTRAN",
+          "SORTCODE"
+        ],
+        "sqlIncludes": [
+          "CONTDB2",
+          "CUSTDB2",
+          "PROCDB2",
+          "SQLCA"
+        ],
+        "db2Tables": [
+          "CONTROL",
+          "CUSTOMER",
+          "PROCTRAN"
+        ],
+        "cicsRunTransid": [
+          "WS-RUN-TRANSID"
+        ],
+        "cicsAbend": [
+          "HWPT"
+        ]
+      },
+      "readOnly": false,
+      "phase2FirstWave": false,
+      "apiOperations": [
+        {
+          "method": "POST",
+          "path": "/customers",
+          "operationId": "createCustomer",
+          "readOnly": false,
+          "successStatus": "201",
+          "requestBodySchema": "CreateCustomerRequest",
+          "responseSchema": "CreatedCustomer",
+          "declaredStatuses": [
+            "201",
+            "400",
+            "401",
+            "403",
+            "500"
+          ],
+          "operationDir": "src/api/src/main/operations/%2Fcustomers/post",
+          "mappedResponseFiles": [
+            "response_201.yaml",
+            "response_400.yaml",
+            "response_401.yaml",
+            "response_403.yaml",
+            "response_500.yaml",
+            "version"
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "DBCRFUN",
+      "backend": "CICS",
+      "zosAssetType": "cicsCommarea-1.0",
+      "description": "Debit/Credit Function CICS Program",
+      "zosAssetPath": "src/api/src/main/zosAssets/DBCRFUN",
+      "requestSchema": "src/api/src/main/zosAssets/DBCRFUN/providerFiles/gen/requestSchema.json",
+      "responseSchema": "src/api/src/main/zosAssets/DBCRFUN/providerFiles/gen/responseSchema.json",
+      "requestLayout": {
+        "sourceFile": "PAYDBCRZ.cpy",
+        "sourcePath": "src/base/cics/copy/PAYDBCRZ.cpy",
+        "generatedCopybook": "src/api/src/main/zosAssets/DBCRFUN/providerFiles/gen/PAYDBCRZ_request_0.cpy",
+        "topLevel": "PAYDBCRZ",
+        "bytes": 132
+      },
+      "responseLayout": {
+        "sourceFile": "PAYDBCRZ.cpy",
+        "sourcePath": "src/base/cics/copy/PAYDBCRZ.cpy",
+        "generatedCopybook": "src/api/src/main/zosAssets/DBCRFUN/providerFiles/gen/PAYDBCRZ_response_0.cpy",
+        "topLevel": "PAYDBCRZ",
+        "bytes": 132
+      },
+      "providerProperties": {
+        "transidUsage": "EIB_ONLY",
+        "transid": "OMEN",
+        "language": "COBOL",
+        "program": "DBCRFUN",
+        "connectionRef": "bankzCicsConnection",
+        "ccsid": "037"
+      },
+      "cobolProgram": "src/base/cics/cobol/DBCRFUN.cbl",
+      "programFacts": {
+        "copybooks": [
+          "ABNDINFO",
+          "ACCOUNT",
+          "PAYDBCR",
+          "PROCTRAN",
+          "SORTCODE"
+        ],
+        "sqlIncludes": [
+          "ACCDB2",
+          "PROCDB2",
+          "SQLCA"
+        ],
+        "db2Tables": [
+          "ACCOUNT",
+          "PROCTRAN"
+        ],
+        "syncpoint": true,
+        "handleAbend": true,
+        "cicsAbend": [
+          "HROL"
+        ]
+      },
+      "readOnly": false,
+      "phase2FirstWave": false,
+      "apiOperations": [
+        {
+          "method": "POST",
+          "path": "/accounts/{accountId}/deposit",
+          "operationId": "depositToAccount",
+          "readOnly": false,
+          "successStatus": "201",
+          "requestBodySchema": "DepositRequest",
+          "responseSchema": "DepositResponse",
+          "declaredStatuses": [
+            "201",
+            "400",
+            "401",
+            "403",
+            "404",
+            "500"
+          ],
+          "operationDir": "src/api/src/main/operations/%2Faccounts%2F%7BaccountId%7D%2Fdeposit/post",
+          "mappedResponseFiles": [
+            "response_201.yaml",
+            "response_401.yaml",
+            "response_403.yaml",
+            "response_404.yaml",
+            "response_500.yaml",
+            "version"
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "DELCUS",
+      "backend": "CICS",
+      "zosAssetType": "cicsCommarea-1.0",
+      "description": "Delete Customer CICS Program",
+      "zosAssetPath": "src/api/src/main/zosAssets/DELCUS",
+      "requestSchema": "src/api/src/main/zosAssets/DELCUS/providerFiles/gen/requestSchema.json",
+      "responseSchema": "src/api/src/main/zosAssets/DELCUS/providerFiles/gen/responseSchema.json",
+      "requestLayout": {
+        "sourceFile": "DELCUS.cpy",
+        "sourcePath": "src/base/cics/copy/DELCUS.cpy",
+        "generatedCopybook": "src/api/src/main/zosAssets/DELCUS/providerFiles/gen/DELCUS_request_0.cpy",
+        "topLevel": "DELCUSZ",
+        "bytes": 399
+      },
+      "responseLayout": {
+        "sourceFile": "DELCUS.cpy",
+        "sourcePath": "src/base/cics/copy/DELCUS.cpy",
+        "generatedCopybook": "src/api/src/main/zosAssets/DELCUS/providerFiles/gen/DELCUS_response_0.cpy",
+        "topLevel": "DELCUSZ",
+        "bytes": 399
+      },
+      "providerProperties": {
+        "transidUsage": "EIB_ONLY",
+        "transid": "OMEN",
+        "language": "COBOL",
+        "program": "DELCUS",
+        "connectionRef": "bankzCicsConnection",
+        "ccsid": "037"
+      },
+      "cobolProgram": "src/base/cics/cobol/DELCUS.cbl",
+      "programFacts": {
+        "copybooks": [
+          "ABNDINFO",
+          "ACCOUNT",
+          "CUSTOMER",
+          "DELCUS",
+          "INQACCCU",
+          "INQCUSTZ",
+          "PROCTRAN",
+          "SORTCODE"
+        ],
+        "sqlIncludes": [
+          "CUSTDB2",
+          "PROCDB2",
+          "SQLCA"
+        ],
+        "db2Tables": [
+          "CUSTOMER",
+          "PROCTRAN"
+        ],
+        "cicsLinkLiterals": [
+          "INQACCCU"
+        ],
+        "cicsAbend": [
+          "HWPT",
+          "WPV6",
+          "WPV7"
+        ]
+      },
+      "readOnly": false,
+      "phase2FirstWave": false,
+      "apiOperations": [
+        {
+          "method": "DELETE",
+          "path": "/customers/{customerId}",
+          "operationId": "deleteCustomer",
+          "readOnly": false,
+          "successStatus": "204",
+          "requestBodySchema": null,
+          "responseSchema": null,
+          "declaredStatuses": [
+            "204",
+            "400",
+            "401",
+            "403",
+            "404",
+            "500"
+          ],
+          "operationDir": "src/api/src/main/operations/%2Fcustomers%2F%7BcustomerId%7D/delete",
+          "mappedResponseFiles": [
+            "response_204.yaml",
+            "response_400.yaml",
+            "response_401.yaml",
+            "response_403.yaml",
+            "response_404.yaml",
+            "response_500.yaml",
+            "version"
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "IBACSUM",
+      "backend": "IMS",
+      "zosAssetType": "imsTransaction-1.0",
+      "description": "GET CUSTOMER ACCOUNT BALANCES",
+      "zosAssetPath": "src/api/src/main/zosAssets/IBACSUM",
+      "requestSchema": "src/api/src/main/zosAssets/IBACSUM/providerFiles/gen/requestSchema.json",
+      "responseSchema": "src/api/src/main/zosAssets/IBACSUM/providerFiles/gen/responseSchema.json",
+      "requestLayout": {
+        "sourceFile": "IBACSUM.cbl",
+        "sourcePath": "src/base/ims/cobol/IBACSUM.cbl",
+        "generatedCopybook": "src/api/src/main/zosAssets/IBACSUM/providerFiles/gen/INPUT-AREA_request_0.cpy",
+        "topLevel": "INPUT-AREA",
+        "bytes": 21
+      },
+      "responseLayout": {
+        "sourceFile": "IBACSUM.cbl",
+        "sourcePath": "src/base/ims/cobol/IBACSUM.cbl",
+        "generatedCopybook": "src/api/src/main/zosAssets/IBACSUM/providerFiles/gen/OUTPUT-AREA_response_0.cpy",
+        "topLevel": "OUTPUT-AREA",
+        "bytes": 139
+      },
+      "providerProperties": {
+        "language": "COBOL",
+        "transactionCode": "IBACSUM",
+        "connectionRef": "imsConn"
+      },
+      "cobolProgram": "src/base/ims/cobol/IBACSUM.cbl",
+      "programFacts": {
+        "calls": [
+          "CBLTDLI"
+        ]
+      },
+      "readOnly": true,
+      "phase2FirstWave": false,
+      "apiOperations": [
+        {
+          "method": "GET",
+          "path": "/ims/accounts/{accountId}",
+          "operationId": "getIMSAccount",
+          "readOnly": true,
+          "successStatus": "200",
+          "requestBodySchema": null,
+          "responseSchema": "Account",
+          "declaredStatuses": [
+            "200",
+            "400",
+            "401",
+            "403",
+            "404",
+            "500"
+          ],
+          "operationDir": "src/api/src/main/operations/%2Fims%2Faccounts%2F%7BaccountId%7D/get",
+          "mappedResponseFiles": [
+            "response_200.yaml",
+            "response_400.yaml",
+            "response_401.yaml",
+            "response_403.yaml",
+            "response_404.yaml",
+            "response_500.yaml",
+            "version"
+          ]
+        },
+        {
+          "method": "GET",
+          "path": "/ims/accounts/{accountId}/balances",
+          "operationId": "getIMSAccountBalances",
+          "readOnly": true,
+          "successStatus": "200",
+          "requestBodySchema": null,
+          "responseSchema": "Balance",
+          "declaredStatuses": [
+            "200",
+            "400",
+            "401",
+            "403",
+            "404",
+            "500"
+          ],
+          "operationDir": "src/api/src/main/operations/%2Fims%2Faccounts%2F%7BaccountId%7D%2Fbalances/get",
+          "mappedResponseFiles": [
+            "response_200.yaml",
+            "response_400.yaml",
+            "response_401.yaml",
+            "response_403.yaml",
+            "response_404.yaml",
+            "response_500.yaml",
+            "version"
+          ]
+        },
+        {
+          "method": "GET",
+          "path": "/ims/customers/{customerId}/accounts",
+          "operationId": "getIMSCustomerAccounts",
+          "readOnly": true,
+          "successStatus": "200",
+          "requestBodySchema": null,
+          "responseSchema": "AccountList",
+          "declaredStatuses": [
+            "200",
+            "400",
+            "401",
+            "403",
+            "404",
+            "500"
+          ],
+          "operationDir": "src/api/src/main/operations/%2Fims%2Fcustomers%2F%7BcustomerId%7D%2Faccounts/get",
+          "mappedResponseFiles": [
+            "response_200.yaml",
+            "response_400.yaml",
+            "response_401.yaml",
+            "response_403.yaml",
+            "response_404.yaml",
+            "response_500.yaml",
+            "version"
+          ]
+        }
+      ],
+      "imsPsb": "src/base/ims/PSB/IBACSUM.asm",
+      "imsPcbs": [
+        {
+          "dbd": "ACCOUNT",
+          "procopt": "G"
+        },
+        {
+          "dbd": "CUSTACCS",
+          "procopt": "G"
+        }
+      ],
+      "imsDbds": [
+        "src/base/ims/DBD/ACCOUNT.asm",
+        "src/base/ims/DBD/CUSTACCS.asm"
+      ]
+    },
+    {
+      "operation": "IBGCUDAT",
+      "backend": "IMS",
+      "zosAssetType": "imsTransaction-1.0",
+      "description": "Get Customer Profile",
+      "zosAssetPath": "src/api/src/main/zosAssets/IBGCUDAT",
+      "requestSchema": "src/api/src/main/zosAssets/IBGCUDAT/providerFiles/gen/requestSchema.json",
+      "responseSchema": "src/api/src/main/zosAssets/IBGCUDAT/providerFiles/gen/responseSchema.json",
+      "requestLayout": {
+        "sourceFile": "IBGCUDAT.cbl",
+        "sourcePath": "src/base/ims/cobol/IBGCUDAT.cbl",
+        "generatedCopybook": "src/api/src/main/zosAssets/IBGCUDAT/providerFiles/gen/INPUT-AREA_request_0.cpy",
+        "topLevel": "INPUT-AREA",
+        "bytes": 21
+      },
+      "responseLayout": {
+        "sourceFile": "IBGCUDAT.cbl",
+        "sourcePath": "src/base/ims/cobol/IBGCUDAT.cbl",
+        "generatedCopybook": "src/api/src/main/zosAssets/IBGCUDAT/providerFiles/gen/OUTPUT-AREA_response_0.cpy",
+        "topLevel": "OUTPUT-AREA",
+        "bytes": 279
+      },
+      "providerProperties": {
+        "language": "COBOL",
+        "transactionCode": "IBGCUDAT",
+        "connectionRef": "imsConn"
+      },
+      "cobolProgram": "src/base/ims/cobol/IBGCUDAT.cbl",
+      "programFacts": {
+        "calls": [
+          "CBLTDLI"
+        ]
+      },
+      "readOnly": true,
+      "phase2FirstWave": false,
+      "apiOperations": [
+        {
+          "method": "GET",
+          "path": "/ims/customers/{customerId}",
+          "operationId": "getIMSCustomer",
+          "readOnly": true,
+          "successStatus": "200",
+          "requestBodySchema": null,
+          "responseSchema": "Customer",
+          "declaredStatuses": [
+            "200",
+            "400",
+            "401",
+            "403",
+            "404",
+            "500"
+          ],
+          "operationDir": "src/api/src/main/operations/%2Fims%2Fcustomers%2F%7BcustomerId%7D/get",
+          "mappedResponseFiles": [
+            "response_200.yaml",
+            "response_400.yaml",
+            "response_401.yaml",
+            "response_403.yaml",
+            "response_404.yaml",
+            "response_500.yaml",
+            "version"
+          ]
+        }
+      ],
+      "imsPsb": "src/base/ims/PSB/IBGCUDAT.asm",
+      "imsPcbs": [
+        {
+          "dbd": "CUSTOMER",
+          "procopt": "G"
+        }
+      ],
+      "imsDbds": [
+        "src/base/ims/DBD/CUSTOMER.asm"
+      ]
+    },
+    {
+      "operation": "IBSCUDAT",
+      "backend": "IMS",
+      "zosAssetType": "imsTransaction-1.0",
+      "description": "Save Customer Data",
+      "zosAssetPath": "src/api/src/main/zosAssets/IBSCUDAT",
+      "requestSchema": "src/api/src/main/zosAssets/IBSCUDAT/providerFiles/gen/requestSchema.json",
+      "responseSchema": "src/api/src/main/zosAssets/IBSCUDAT/providerFiles/gen/responseSchema.json",
+      "requestLayout": {
+        "sourceFile": "IBSCUDAT.cbl",
+        "sourcePath": "src/base/ims/cobol/IBSCUDAT.cbl",
+        "generatedCopybook": "src/api/src/main/zosAssets/IBSCUDAT/providerFiles/gen/INPUT-AREA_request_0.cpy",
+        "topLevel": "INPUT-AREA",
+        "bytes": 250
+      },
+      "responseLayout": {
+        "sourceFile": "IBSCUDAT.cbl",
+        "sourcePath": "src/base/ims/cobol/IBSCUDAT.cbl",
+        "generatedCopybook": "src/api/src/main/zosAssets/IBSCUDAT/providerFiles/gen/OUTPUT-AREA_response_0.cpy",
+        "topLevel": "OUTPUT-AREA",
+        "bytes": 274
+      },
+      "providerProperties": {
+        "language": "COBOL",
+        "transactionCode": "IBSCUDAT",
+        "connectionRef": "imsConn"
+      },
+      "cobolProgram": "src/base/ims/cobol/IBSCUDAT.cbl",
+      "programFacts": {
+        "calls": [
+          "CBLTDLI"
+        ]
+      },
+      "readOnly": false,
+      "phase2FirstWave": false,
+      "apiOperations": [
+        {
+          "method": "PUT",
+          "path": "/ims/customers/{customerId}",
+          "operationId": "updateIMSCustomer",
+          "readOnly": false,
+          "successStatus": "200",
+          "requestBodySchema": "CustomerUpdate",
+          "responseSchema": "Customer",
+          "declaredStatuses": [
+            "200",
+            "400",
+            "401",
+            "403",
+            "404",
+            "500"
+          ],
+          "operationDir": "src/api/src/main/operations/%2Fims%2Fcustomers%2F%7BcustomerId%7D/put",
+          "mappedResponseFiles": [
+            "response_200.yaml",
+            "response_400.yaml",
+            "response_401.yaml",
+            "response_403.yaml",
+            "response_404.yaml",
+            "response_500.yaml",
+            "version"
+          ]
+        }
+      ],
+      "imsPsb": "src/base/ims/PSB/IBSCUDAT.asm",
+      "imsPcbs": [
+        {
+          "dbd": "CUSTOMER",
+          "procopt": "R"
+        }
+      ],
+      "imsDbds": [
+        "src/base/ims/DBD/CUSTOMER.asm"
+      ]
+    },
+    {
+      "operation": "IBTRAN",
+      "backend": "IMS",
+      "zosAssetType": "imsTransaction-1.0",
+      "description": "IMS account transaction service",
+      "zosAssetPath": "src/api/src/main/zosAssets/IBTRAN",
+      "requestSchema": "src/api/src/main/zosAssets/IBTRAN/providerFiles/gen/requestSchema.json",
+      "responseSchema": "src/api/src/main/zosAssets/IBTRAN/providerFiles/gen/responseSchema.json",
+      "requestLayout": {
+        "sourceFile": "IBTRAN.cpy",
+        "sourcePath": "src/base/ims/copy/IBTRAN.cpy",
+        "generatedCopybook": "src/api/src/main/zosAssets/IBTRAN/providerFiles/gen/INPUT-AREA_request_0.cpy",
+        "topLevel": "INPUT-AREA",
+        "bytes": 56
+      },
+      "responseLayout": {
+        "sourceFile": "IBTRAN.cpy",
+        "sourcePath": "src/base/ims/copy/IBTRAN.cpy",
+        "generatedCopybook": "src/api/src/main/zosAssets/IBTRAN/providerFiles/gen/OUTPUT-AREA_response_0.cpy",
+        "topLevel": "OUTPUT-AREA",
+        "bytes": 150
+      },
+      "providerProperties": {
+        "language": "COBOL",
+        "transactionCode": "IBTRAN",
+        "connectionRef": "imsConn"
+      },
+      "cobolProgram": "src/base/ims/cobol/IBTRAN.cbl",
+      "programFacts": {
+        "copybooks": [
+          "JNI"
+        ],
+        "calls": [
+          "CBLTDLI"
+        ]
+      },
+      "readOnly": false,
+      "phase2FirstWave": false,
+      "apiOperations": [
+        {
+          "method": "POST",
+          "path": "/ims/accounts/{customerId}/{accountId}/deposit",
+          "operationId": "depositToIMSAccount",
+          "readOnly": false,
+          "successStatus": "201",
+          "requestBodySchema": "DepositRequest",
+          "responseSchema": "DepositResponse",
+          "declaredStatuses": [
+            "201",
+            "400",
+            "401",
+            "403",
+            "404",
+            "500"
+          ],
+          "operationDir": "src/api/src/main/operations/%2Fims%2Faccounts%2F%7BcustomerId%7D%2F%7BaccountId%7D%2Fdeposit/post",
+          "mappedResponseFiles": [
+            "response_201.yaml",
+            "response_400.yaml",
+            "response_401.yaml",
+            "response_403.yaml",
+            "response_404.yaml",
+            "response_500.yaml",
+            "version"
+          ]
+        }
+      ],
+      "imsPsb": "src/base/ims/PSB/IBTRAN.asm",
+      "imsPcbs": [
+        {
+          "dbd": "ACCOUNT",
+          "procopt": "R"
+        },
+        {
+          "dbd": "CUSTACCS",
+          "procopt": "G"
+        },
+        {
+          "dbd": "HISTORY",
+          "procopt": "I"
+        }
+      ],
+      "imsDbds": [
+        "src/base/ims/DBD/ACCOUNT.asm",
+        "src/base/ims/DBD/CUSTACCS.asm",
+        "src/base/ims/DBD/HISTORY.asm"
+      ]
+    },
+    {
+      "operation": "INQACC",
+      "backend": "CICS",
+      "zosAssetType": "cicsCommarea-1.0",
+      "description": null,
+      "zosAssetPath": "src/api/src/main/zosAssets/INQACC",
+      "requestSchema": "src/api/src/main/zosAssets/INQACC/providerFiles/gen/requestSchema.json",
+      "responseSchema": "src/api/src/main/zosAssets/INQACC/providerFiles/gen/responseSchema.json",
+      "requestLayout": {
+        "sourceFile": "INQACCZ.cpy",
+        "sourcePath": "src/base/cics/copy/INQACCZ.cpy",
+        "generatedCopybook": "src/api/src/main/zosAssets/INQACC/providerFiles/gen/INQACC-COMMAREA_request_0.cpy",
+        "topLevel": "INQACC-COMMAREA",
+        "bytes": 103
+      },
+      "responseLayout": {
+        "sourceFile": "INQACCZ.cpy",
+        "sourcePath": "src/base/cics/copy/INQACCZ.cpy",
+        "generatedCopybook": "src/api/src/main/zosAssets/INQACC/providerFiles/gen/INQACC-COMMAREA_response_0.cpy",
+        "topLevel": "INQACC-COMMAREA",
+        "bytes": 103
+      },
+      "providerProperties": {
+        "transidUsage": "EIB_ONLY",
+        "transid": "OMEN",
+        "language": "COBOL",
+        "program": "INQACC",
+        "connectionRef": "bankzCicsConnection",
+        "ccsid": "037"
+      },
+      "cobolProgram": "src/base/cics/cobol/INQACC.cbl",
+      "programFacts": {
+        "copybooks": [
+          "ABNDINFO",
+          "ACCOUNT",
+          "INQACC",
+          "SORTCODE"
+        ],
+        "sqlIncludes": [
+          "ACCDB2",
+          "SQLCA"
+        ],
+        "db2Tables": [
+          "ACCOUNT"
+        ],
+        "syncpoint": true,
+        "cicsAbend": [
+          "HNCS",
+          "HRAC",
+          "HROL"
+        ]
+      },
+      "readOnly": true,
+      "phase2FirstWave": true,
+      "apiOperations": [
+        {
+          "method": "GET",
+          "path": "/accounts/{accountId}",
+          "operationId": "getAccount",
+          "readOnly": true,
+          "successStatus": "200",
+          "requestBodySchema": null,
+          "responseSchema": "Account",
+          "declaredStatuses": [
+            "200",
+            "400",
+            "401",
+            "403",
+            "404",
+            "500"
+          ],
+          "operationDir": "src/api/src/main/operations/%2Faccounts%2F%7BaccountId%7D/get",
+          "mappedResponseFiles": [
+            "response_200.yaml",
+            "response_400.yaml",
+            "response_401.yaml",
+            "response_403.yaml",
+            "response_404.yaml",
+            "response_500.yaml",
+            "version"
+          ]
+        },
+        {
+          "method": "GET",
+          "path": "/accounts/{accountId}/balances",
+          "operationId": "getAccountBalances",
+          "readOnly": true,
+          "successStatus": "200",
+          "requestBodySchema": null,
+          "responseSchema": "Balance",
+          "declaredStatuses": [
+            "200",
+            "400",
+            "401",
+            "403",
+            "404",
+            "500"
+          ],
+          "operationDir": "src/api/src/main/operations/%2Faccounts%2F%7BaccountId%7D%2Fbalances/get",
+          "mappedResponseFiles": [
+            "response_200.yaml",
+            "response_400.yaml",
+            "response_401.yaml",
+            "response_403.yaml",
+            "response_404.yaml",
+            "response_500.yaml",
+            "version"
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "INQACCCU",
+      "backend": "CICS",
+      "zosAssetType": "cicsCommarea-1.0",
+      "description": null,
+      "zosAssetPath": "src/api/src/main/zosAssets/INQACCCU",
+      "requestSchema": "src/api/src/main/zosAssets/INQACCCU/providerFiles/gen/requestSchema.json",
+      "responseSchema": "src/api/src/main/zosAssets/INQACCCU/providerFiles/gen/responseSchema.json",
+      "requestLayout": {
+        "sourceFile": "INQACCCZ.cpy",
+        "sourcePath": "src/base/cics/copy/INQACCCZ.cpy",
+        "generatedCopybook": "src/api/src/main/zosAssets/INQACCCU/providerFiles/gen/INQACCCZ_request_0.cpy",
+        "topLevel": "INQACCCZ",
+        "bytes": 1981
+      },
+      "responseLayout": {
+        "sourceFile": "INQACCCZ.cpy",
+        "sourcePath": "src/base/cics/copy/INQACCCZ.cpy",
+        "generatedCopybook": "src/api/src/main/zosAssets/INQACCCU/providerFiles/gen/INQACCCZ_response_0.cpy",
+        "topLevel": "INQACCCZ",
+        "bytes": 1981
+      },
+      "providerProperties": {
+        "transidUsage": "EIB_ONLY",
+        "transid": "OMEN",
+        "language": "COBOL",
+        "program": "INQACCCU",
+        "connectionRef": "bankzCicsConnection",
+        "ccsid": "037"
+      },
+      "cobolProgram": "src/base/cics/cobol/INQACCCU.cbl",
+      "programFacts": {
+        "copybooks": [
+          "ABNDINFO",
+          "ACCOUNT",
+          "CUSTOMER",
+          "INQACCCU",
+          "INQCUSTZ",
+          "SORTCODE"
+        ],
+        "sqlIncludes": [
+          "ACCDB2",
+          "SQLCA"
+        ],
+        "db2Tables": [
+          "ACCOUNT"
+        ],
+        "syncpoint": true,
+        "handleAbend": true,
+        "cicsAbend": [
+          "HROL"
+        ]
+      },
+      "readOnly": true,
+      "phase2FirstWave": false,
+      "apiOperations": [
+        {
+          "method": "GET",
+          "path": "/customers/{customerId}/accounts",
+          "operationId": "getCustomerAccounts",
+          "readOnly": true,
+          "successStatus": "200",
+          "requestBodySchema": null,
+          "responseSchema": "AccountList",
+          "declaredStatuses": [
+            "200",
+            "400",
+            "401",
+            "403",
+            "404",
+            "500"
+          ],
+          "operationDir": "src/api/src/main/operations/%2Fcustomers%2F%7BcustomerId%7D%2Faccounts/get",
+          "mappedResponseFiles": [
+            "response_200.yaml",
+            "response_400.yaml",
+            "response_401.yaml",
+            "response_403.yaml",
+            "response_404.yaml",
+            "response_500.yaml",
+            "version"
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "INQACCS",
+      "backend": "CICS",
+      "zosAssetType": "cicsCommarea-1.0",
+      "description": null,
+      "zosAssetPath": "src/api/src/main/zosAssets/INQACCS",
+      "requestSchema": "src/api/src/main/zosAssets/INQACCS/providerFiles/gen/requestSchema.json",
+      "responseSchema": "src/api/src/main/zosAssets/INQACCS/providerFiles/gen/responseSchema.json",
+      "requestLayout": {
+        "sourceFile": "INQACCSZ.cpy",
+        "sourcePath": "src/base/cics/copy/INQACCSZ.cpy",
+        "generatedCopybook": "src/api/src/main/zosAssets/INQACCS/providerFiles/gen/INQACCS_request_0.cpy",
+        "topLevel": "INQACCS",
+        "bytes": 1967
+      },
+      "responseLayout": {
+        "sourceFile": "INQACCSZ.cpy",
+        "sourcePath": "src/base/cics/copy/INQACCSZ.cpy",
+        "generatedCopybook": "src/api/src/main/zosAssets/INQACCS/providerFiles/gen/INQACCS_request_0.cpy",
+        "topLevel": "INQACCS",
+        "bytes": 1967
+      },
+      "providerProperties": {
+        "transidUsage": "EIB_ONLY",
+        "transid": "OMEN",
+        "language": "COBOL",
+        "program": "INQACCS",
+        "connectionRef": "bankzCicsConnection",
+        "ccsid": "037"
+      },
+      "cobolProgram": "src/base/cics/cobol/INQACCS.cbl",
+      "programFacts": {
+        "copybooks": [
+          "ABNDINFO",
+          "INQACCS",
+          "SORTCODE"
+        ],
+        "sqlIncludes": [
+          "ACCDB2",
+          "SQLCA"
+        ],
+        "db2Tables": [
+          "ACCOUNT"
+        ],
+        "syncpoint": true,
+        "handleAbend": true
+      },
+      "readOnly": true,
+      "phase2FirstWave": true,
+      "apiOperations": [
+        {
+          "method": "GET",
+          "path": "/accounts",
+          "operationId": "getAccounts",
+          "readOnly": true,
+          "successStatus": "200",
+          "requestBodySchema": null,
+          "responseSchema": "AccountList",
+          "declaredStatuses": [
+            "200",
+            "400",
+            "401",
+            "500"
+          ],
+          "operationDir": "src/api/src/main/operations/%2Faccounts/get",
+          "mappedResponseFiles": [
+            "response_200.yaml",
+            "response_400.yaml",
+            "response_401.yaml",
+            "response_403.yaml",
+            "response_404.yaml",
+            "response_500.yaml",
+            "version"
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "INQCUST",
+      "backend": "CICS",
+      "zosAssetType": "cicsCommarea-1.0",
+      "description": null,
+      "zosAssetPath": "src/api/src/main/zosAssets/INQCUST",
+      "requestSchema": "src/api/src/main/zosAssets/INQCUST/providerFiles/gen/requestSchema.json",
+      "responseSchema": "src/api/src/main/zosAssets/INQCUST/providerFiles/gen/responseSchema.json",
+      "requestLayout": {
+        "sourceFile": "INQCUSTZ.cpy",
+        "sourcePath": "src/base/cics/copy/INQCUSTZ.cpy",
+        "generatedCopybook": "src/api/src/main/zosAssets/INQCUST/providerFiles/gen/INQCUSTZ_request_0.cpy",
+        "topLevel": "INQCUSTZ",
+        "bytes": 403
+      },
+      "responseLayout": {
+        "sourceFile": "INQCUSTZ.cpy",
+        "sourcePath": "src/base/cics/copy/INQCUSTZ.cpy",
+        "generatedCopybook": "src/api/src/main/zosAssets/INQCUST/providerFiles/gen/INQCUSTZ_response_0.cpy",
+        "topLevel": "INQCUSTZ",
+        "bytes": 403
+      },
+      "providerProperties": {
+        "transidUsage": "EIB_ONLY",
+        "transid": "OMEN",
+        "language": "COBOL",
+        "program": "INQCUST",
+        "connectionRef": "bankzCicsConnection",
+        "ccsid": "037"
+      },
+      "cobolProgram": "src/base/cics/cobol/INQCUST.cbl",
+      "programFacts": {
+        "copybooks": [
+          "ABNDINFO",
+          "CUSTOMER",
+          "INQCUSTZ",
+          "SORTCODE"
+        ],
+        "sqlIncludes": [
+          "CUSTDB2",
+          "SQLCA"
+        ],
+        "db2Tables": [
+          "CUSTOMER"
+        ],
+        "syncpoint": true,
+        "handleAbend": true,
+        "cicsAbend": [
+          "CVR1",
+          "HROL"
+        ]
+      },
+      "readOnly": true,
+      "phase2FirstWave": true,
+      "apiOperations": [
+        {
+          "method": "GET",
+          "path": "/customers/{customerId}",
+          "operationId": "getCustomer",
+          "readOnly": true,
+          "successStatus": "200",
+          "requestBodySchema": null,
+          "responseSchema": "Customer",
+          "declaredStatuses": [
+            "200",
+            "400",
+            "401",
+            "403",
+            "404",
+            "500"
+          ],
+          "operationDir": "src/api/src/main/operations/%2Fcustomers%2F%7BcustomerId%7D/get",
+          "mappedResponseFiles": [
+            "response_200.yaml",
+            "response_400.yaml",
+            "response_401.yaml",
+            "response_403.yaml",
+            "response_404.yaml",
+            "response_500.yaml",
+            "version"
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "INQTRAND",
+      "backend": "CICS",
+      "zosAssetType": "cicsCommarea-1.0",
+      "description": "Inquire Transaction Detail - Query single transaction by composite key",
+      "zosAssetPath": "src/api/src/main/zosAssets/INQTRAND",
+      "requestSchema": "src/api/src/main/zosAssets/INQTRAND/providerFiles/gen/requestSchema.json",
+      "responseSchema": "src/api/src/main/zosAssets/INQTRAND/providerFiles/gen/responseSchema.json",
+      "requestLayout": {
+        "sourceFile": "INQTRAND.cpy",
+        "sourcePath": "src/base/cics/copy/INQTRAND.cpy",
+        "generatedCopybook": "src/api/src/main/zosAssets/INQTRAND/providerFiles/gen/INQTRAND-COMMAREA_request_0.cpy",
+        "topLevel": "INQTRAND-COMMAREA",
+        "bytes": 191
+      },
+      "responseLayout": {
+        "sourceFile": "INQTRAND.cpy",
+        "sourcePath": "src/base/cics/copy/INQTRAND.cpy",
+        "generatedCopybook": "src/api/src/main/zosAssets/INQTRAND/providerFiles/gen/INQTRAND-COMMAREA_response_0.cpy",
+        "topLevel": "INQTRAND-COMMAREA",
+        "bytes": 191
+      },
+      "providerProperties": {
+        "transidUsage": "EIB_ONLY",
+        "transid": "ITRD",
+        "language": "COBOL",
+        "program": "INQTRAND",
+        "connectionRef": "bankzCicsConnection",
+        "ccsid": "037"
+      },
+      "cobolProgram": "src/base/cics/cobol/INQTRAND.cbl",
+      "programFacts": {
+        "copybooks": [
+          "ABNDINFO",
+          "INQTRAND",
+          "SORTCODE"
+        ],
+        "sqlIncludes": [
+          "PROCDB2",
+          "SQLCA"
+        ],
+        "db2Tables": [
+          "PROCTRAN"
+        ],
+        "cicsAbend": [
+          "ITRD"
+        ]
+      },
+      "readOnly": true,
+      "phase2FirstWave": true,
+      "apiOperations": [
+        {
+          "method": "GET",
+          "path": "/accounts/{accountId}/transactions/{transactionId}",
+          "operationId": "getTransaction",
+          "readOnly": true,
+          "successStatus": "200",
+          "requestBodySchema": null,
+          "responseSchema": "Transaction",
+          "declaredStatuses": [
+            "200",
+            "400",
+            "401",
+            "403",
+            "404",
+            "500"
+          ],
+          "operationDir": "src/api/src/main/operations/%2Faccounts%2F%7BaccountId%7D%2Ftransactions%2F%7BtransactionId%7D/get",
+          "mappedResponseFiles": [
+            "response_200.yaml",
+            "response_400.yaml",
+            "response_401.yaml",
+            "response_403.yaml",
+            "response_404.yaml",
+            "response_500.yaml",
+            "version"
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "INQTRANL",
+      "backend": "CICS",
+      "zosAssetType": "cicsCommarea-1.0",
+      "description": "Inquire Transaction List - Query transactions by account with date filtering and pagination",
+      "zosAssetPath": "src/api/src/main/zosAssets/INQTRANL",
+      "requestSchema": "src/api/src/main/zosAssets/INQTRANL/providerFiles/gen/requestSchema.json",
+      "responseSchema": "src/api/src/main/zosAssets/INQTRANL/providerFiles/gen/responseSchema.json",
+      "requestLayout": {
+        "sourceFile": "INQTRANL.cpy",
+        "sourcePath": "src/base/cics/copy/INQTRANL.cpy",
+        "generatedCopybook": "src/api/src/main/zosAssets/INQTRANL/providerFiles/gen/INQTRANL-COMMAREA_request_0.cpy",
+        "topLevel": "INQTRANL-COMMAREA",
+        "bytes": 14551
+      },
+      "responseLayout": {
+        "sourceFile": "INQTRANL.cpy",
+        "sourcePath": "src/base/cics/copy/INQTRANL.cpy",
+        "generatedCopybook": "src/api/src/main/zosAssets/INQTRANL/providerFiles/gen/INQTRANL-COMMAREA_response_0.cpy",
+        "topLevel": "INQTRANL-COMMAREA",
+        "bytes": 14551
+      },
+      "providerProperties": {
+        "transidUsage": "EIB_ONLY",
+        "transid": "ITRL",
+        "language": "COBOL",
+        "program": "INQTRANL",
+        "connectionRef": "bankzCicsConnection",
+        "ccsid": "037"
+      },
+      "cobolProgram": "src/base/cics/cobol/INQTRANL.cbl",
+      "programFacts": {
+        "copybooks": [
+          "ABNDINFO",
+          "INQTRANL",
+          "SORTCODE"
+        ],
+        "sqlIncludes": [
+          "PROCDB2",
+          "SQLCA"
+        ],
+        "db2Tables": [
+          "PROCTRAN"
+        ],
+        "cicsAbend": [
+          "ITRL"
+        ]
+      },
+      "readOnly": true,
+      "phase2FirstWave": true,
+      "apiOperations": [
+        {
+          "method": "GET",
+          "path": "/accounts/{accountId}/transactions",
+          "operationId": "getAccountTransactions",
+          "readOnly": true,
+          "successStatus": "200",
+          "requestBodySchema": null,
+          "responseSchema": "TransactionList",
+          "declaredStatuses": [
+            "200",
+            "400",
+            "401",
+            "403",
+            "404",
+            "500"
+          ],
+          "operationDir": "src/api/src/main/operations/%2Faccounts%2F%7BaccountId%7D%2Ftransactions/get",
+          "mappedResponseFiles": [
+            "response_200.yaml",
+            "response_400.yaml",
+            "response_401.yaml",
+            "response_403.yaml",
+            "response_404.yaml",
+            "response_500.yaml",
+            "version"
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "UPDCUST",
+      "backend": "CICS",
+      "zosAssetType": "cicsCommarea-1.0",
+      "description": null,
+      "zosAssetPath": "src/api/src/main/zosAssets/UPDCUST",
+      "requestSchema": "src/api/src/main/zosAssets/UPDCUST/providerFiles/gen/requestSchema.json",
+      "responseSchema": "src/api/src/main/zosAssets/UPDCUST/providerFiles/gen/responseSchema.json",
+      "requestLayout": {
+        "sourceFile": "UPDCUST.cpy",
+        "sourcePath": "src/base/cics/copy/UPDCUST.cpy",
+        "generatedCopybook": "src/api/src/main/zosAssets/UPDCUST/providerFiles/gen/UPDCUST_request_0.cpy",
+        "topLevel": "UPDCUST",
+        "bytes": 399
+      },
+      "responseLayout": {
+        "sourceFile": "UPDCUST.cpy",
+        "sourcePath": "src/base/cics/copy/UPDCUST.cpy",
+        "generatedCopybook": "src/api/src/main/zosAssets/UPDCUST/providerFiles/gen/UPDCUST_response_0.cpy",
+        "topLevel": "UPDCUST",
+        "bytes": 399
+      },
+      "providerProperties": {
+        "language": "COBOL",
+        "program": "UPDCUST",
+        "connectionRef": "bankzCicsConnection",
+        "ccsid": "37"
+      },
+      "cobolProgram": "src/base/cics/cobol/UPDCUST.cbl",
+      "programFacts": {
+        "copybooks": [
+          "ABNDINFO",
+          "CUSTOMER",
+          "SORTCODE",
+          "UPDCUST"
+        ],
+        "sqlIncludes": [
+          "CUSTDB2",
+          "SQLCA"
+        ],
+        "db2Tables": [
+          "CUSTOMER"
+        ]
+      },
+      "readOnly": false,
+      "phase2FirstWave": false,
+      "apiOperations": [
+        {
+          "method": "PUT",
+          "path": "/customers/{customerId}",
+          "operationId": "updateCustomer",
+          "readOnly": false,
+          "successStatus": "200",
+          "requestBodySchema": "CustomerUpdate",
+          "responseSchema": "Customer",
+          "declaredStatuses": [
+            "200",
+            "400",
+            "401",
+            "403",
+            "404",
+            "500"
+          ],
+          "operationDir": "src/api/src/main/operations/%2Fcustomers%2F%7BcustomerId%7D/put",
+          "mappedResponseFiles": [
+            "response_200.yaml",
+            "response_400.yaml",
+            "response_401.yaml",
+            "response_403.yaml",
+            "response_404.yaml",
+            "response_500.yaml",
+            "version"
+          ]
+        }
+      ]
+    }
+  ]
+}

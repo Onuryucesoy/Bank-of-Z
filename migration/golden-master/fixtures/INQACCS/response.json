@@ -1,0 +1,98 @@
+{
+  "commarea": {
+    "INQACCS": {
+      "COMM-SUCCESS": "Y",
+      "COMM-FAIL-CODE": "0",
+      "COMM-PCB-POINTER": "",
+      "ACCOUNT-DETAILS": [
+        {
+          "COMM-EYE": "ACCT",
+          "COMM-CUSTNO": "0000000001",
+          "COMM-SCODE": "987654",
+          "COMM-ACCNO": 3000,
+          "COMM-ACC-TYPE": "CURRENT",
+          "COMM-INT-RATE": 0.75,
+          "COMM-OPENED": 15012020,
+          "COMM-OPENED-GROUP": {
+            "COMM-OPENED-DAY": 15,
+            "COMM-OPENED-MONTH": 1,
+            "COMM-OPENED-YEAR": 2020
+          },
+          "COMM-OVERDRAFT": 0,
+          "COMM-LAST-STMT-DT": 1022026,
+          "COMM-LAST-STMT-GROUP": {
+            "COMM-LAST-STMT-DAY": 1,
+            "COMM-LAST-STMT-MONTH": 2,
+            "COMM-LAST-STMT-YEAR": 2026
+          },
+          "COMM-NEXT-STMT-DT": 1032026,
+          "COMM-NEXT-STMT-GROUP": {
+            "COMM-NEXT-STMT-DAY": 1,
+            "COMM-NEXT-STMT-MONTH": 3,
+            "COMM-NEXT-STMT-YEAR": 2026
+          },
+          "COMM-AVAIL-BAL": 1234.56,
+          "COMM-ACTUAL-BAL": 1234.56
+        },
+        {
+          "COMM-EYE": "ACCT",
+          "COMM-CUSTNO": "0000000001",
+          "COMM-SCODE": "987654",
+          "COMM-ACCNO": 3001,
+          "COMM-ACC-TYPE": "SAVINGS",
+          "COMM-INT-RATE": 2.1,
+          "COMM-OPENED": 15012020,
+          "COMM-OPENED-GROUP": {
+            "COMM-OPENED-DAY": 15,
+            "COMM-OPENED-MONTH": 1,
+            "COMM-OPENED-YEAR": 2020
+          },
+          "COMM-OVERDRAFT": 0,
+          "COMM-LAST-STMT-DT": 1022026,
+          "COMM-LAST-STMT-GROUP": {
+            "COMM-LAST-STMT-DAY": 1,
+            "COMM-LAST-STMT-MONTH": 2,
+            "COMM-LAST-STMT-YEAR": 2026
+          },
+          "COMM-NEXT-STMT-DT": 1032026,
+          "COMM-NEXT-STMT-GROUP": {
+            "COMM-NEXT-STMT-DAY": 1,
+            "COMM-NEXT-STMT-MONTH": 3,
+            "COMM-NEXT-STMT-YEAR": 2026
+          },
+          "COMM-AVAIL-BAL": 10500.0,
+          "COMM-ACTUAL-BAL": 10500.0
+        },
+        {
+          "COMM-EYE": "ACCT",
+          "COMM-CUSTNO": "0000000001",
+          "COMM-SCODE": "987654",
+          "COMM-ACCNO": 3002,
+          "COMM-ACC-TYPE": "LOAN",
+          "COMM-INT-RATE": 6.99,
+          "COMM-OPENED": 15012020,
+          "COMM-OPENED-GROUP": {
+            "COMM-OPENED-DAY": 15,
+            "COMM-OPENED-MONTH": 1,
+            "COMM-OPENED-YEAR": 2020
+          },
+          "COMM-OVERDRAFT": 0,
+          "COMM-LAST-STMT-DT": 1022026,
+          "COMM-LAST-STMT-GROUP": {
+            "COMM-LAST-STMT-DAY": 1,
+            "COMM-LAST-STMT-MONTH": 2,
+            "COMM-LAST-STMT-YEAR": 2026
+          },
+          "COMM-NEXT-STMT-DT": 1032026,
+          "COMM-NEXT-STMT-GROUP": {
+            "COMM-NEXT-STMT-DAY": 1,
+            "COMM-NEXT-STMT-MONTH": 3,
+            "COMM-NEXT-STMT-YEAR": 2026
+          },
+          "COMM-AVAIL-BAL": -2500.0,
+          "COMM-ACTUAL-BAL": -2500.0
+        }
+      ]
+    }
+  }
+}

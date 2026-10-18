@@ -1,0 +1,35 @@
+{
+  "commarea": {
+    "INQACC-COMMAREA": {
+      "INQACC-EYE": "ACCT",
+      "INQACC-CUSTNO": 1,
+      "INQACC-SCODE": 987654,
+      "INQACC-ACCNO": 3000,
+      "INQACC-ACC-TYPE": "CURRENT",
+      "INQACC-INT-RATE": 0.75,
+      "INQACC-OPENED": 15012020,
+      "INQACC-OPENED-GROUP": {
+        "INQACC-OPENED-DAY": 15,
+        "INQACC-OPENED-MONTH": 1,
+        "INQACC-OPENED-YEAR": 2020
+      },
+      "INQACC-OVERDRAFT": 500,
+      "INQACC-LAST-STMT-DT": 1022026,
+      "INQACC-LAST-STMT-GROUP": {
+        "INQACC-LAST-STMT-DAY": 1,
+        "INQACC-LAST-STMT-MONTH": 2,
+        "INQACC-LAST-STMT-YEAR": 2026
+      },
+      "INQACC-NEXT-STMT-DT": 1032026,
+      "INQACC-NEXT-STMT-GROUP": {
+        "INQACC-NEXT-STMT-DAY": 1,
+        "INQACC-NEXT-STMT-MONTH": 3,
+        "INQACC-NEXT-STMT-YEAR": 2026
+      },
+      "INQACC-AVAIL-BAL": 1234.56,
+      "INQACC-ACTUAL-BAL": 1234.56,
+      "INQACC-SUCCESS": "Y",
+      "INQACC-PCB1-POINTER": ""
+    }
+  }
+}

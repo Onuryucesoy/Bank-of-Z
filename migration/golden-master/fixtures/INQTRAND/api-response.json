@@ -1,0 +1,11 @@
+{
+  "transactionId": "987654-3000-20260312-143000-123456789012",
+  "accountId": "3000",
+  "amount": 50.0,
+  "currency": "GBP",
+  "creditDebitIndicator": "DEBIT",
+  "status": "BOOKED",
+  "bookingDateTime": "2026-03-12T14:30:00Z",
+  "valueDateTime": "2026-03-12T14:30:00Z",
+  "transactionInformation": "Payment to ABC Store"
+}

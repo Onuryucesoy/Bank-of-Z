@@ -1,0 +1,42 @@
+{
+  "commarea": {
+    "INQCUSTZ": {
+      "INQCUST-EYE": "",
+      "INQCUST-SCODE": "",
+      "INQCUST-CUSTNO": 1,
+      "INQCUST-NAME": {
+        "INQCUST-TITLE": "",
+        "INQCUST-FIRST-NAME": "",
+        "INQCUST-LAST-NAME": ""
+      },
+      "INQCUST-DOB": {
+        "INQCUST-DOB-DD": 0,
+        "INQCUST-DOB-MM": 0,
+        "INQCUST-DOB-YYYY": 0
+      },
+      "INQCUST-PHONE": "",
+      "INQCUST-ADDR": {
+        "INQCUST-ADDR-LINE1": "",
+        "INQCUST-ADDR-LINE2": "",
+        "INQCUST-CITY": "",
+        "INQCUST-POSTCODE": "",
+        "INQCUST-COUNTRY": ""
+      },
+      "INQCUST-STATUS": "",
+      "INQCUST-CREATED-DATE": {
+        "INQCUST-CREATED-DD": 0,
+        "INQCUST-CREATED-MM": 0,
+        "INQCUST-CREATED-YYYY": 0
+      },
+      "INQCUST-CREDIT-SCORE": 0,
+      "INQCUST-CS-REVIEW-DT": {
+        "INQCUST-CS-REVIEW-DD": 0,
+        "INQCUST-CS-REVIEW-MM": 0,
+        "INQCUST-CS-REVIEW-YYYY": 0
+      },
+      "INQCUST-INQ-SUCCESS": "",
+      "INQCUST-INQ-FAIL-CD": "",
+      "INQCUST-PCB-POINTER": ""
+    }
+  }
+}
