@@ -1,0 +1,35 @@
+{
+  "commarea": {
+    "INQACC-COMMAREA": {
+      "INQACC-EYE": "",
+      "INQACC-CUSTNO": 0,
+      "INQACC-SCODE": 0,
+      "INQACC-ACCNO": 3000,
+      "INQACC-ACC-TYPE": "",
+      "INQACC-INT-RATE": 0,
+      "INQACC-OPENED": 0,
+      "INQACC-OPENED-GROUP": {
+        "INQACC-OPENED-DAY": 0,
+        "INQACC-OPENED-MONTH": 0,
+        "INQACC-OPENED-YEAR": 0
+      },
+      "INQACC-OVERDRAFT": 0,
+      "INQACC-LAST-STMT-DT": 0,
+      "INQACC-LAST-STMT-GROUP": {
+        "INQACC-LAST-STMT-DAY": 0,
+        "INQACC-LAST-STMT-MONTH": 0,
+        "INQACC-LAST-STMT-YEAR": 0
+      },
+      "INQACC-NEXT-STMT-DT": 0,
+      "INQACC-NEXT-STMT-GROUP": {
+        "INQACC-NEXT-STMT-DAY": 0,
+        "INQACC-NEXT-STMT-MONTH": 0,
+        "INQACC-NEXT-STMT-YEAR": 0
+      },
+      "INQACC-AVAIL-BAL": 0,
+      "INQACC-ACTUAL-BAL": 0,
+      "INQACC-SUCCESS": "",
+      "INQACC-PCB1-POINTER": ""
+    }
+  }
+}

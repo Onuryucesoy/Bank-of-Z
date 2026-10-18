@@ -1,0 +1,14 @@
+{
+  "asset": "INQACCS",
+  "synthetic": true,
+  "note": "Hand-made from the generated schemas; replace with z/OS Connect captures in Phase 2 (see ../../README.md)",
+  "requestSchema": "src/api/src/main/zosAssets/INQACCS/providerFiles/gen/requestSchema.json",
+  "responseSchema": "src/api/src/main/zosAssets/INQACCS/providerFiles/gen/responseSchema.json",
+  "apiCall": {
+    "operationId": "getAccounts",
+    "method": "GET",
+    "path": "/accounts",
+    "status": 200,
+    "schema": "AccountList"
+  }
+}

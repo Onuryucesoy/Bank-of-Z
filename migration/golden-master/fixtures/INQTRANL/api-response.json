@@ -1,0 +1,29 @@
+{
+  "transactions": [
+    {
+      "transactionId": "987654-3000-20260312-143000-123456789012",
+      "accountId": "3000",
+      "amount": 50.0,
+      "currency": "GBP",
+      "creditDebitIndicator": "DEBIT",
+      "status": "BOOKED",
+      "bookingDateTime": "2026-03-12T14:30:00Z",
+      "valueDateTime": "2026-03-12T14:30:00Z",
+      "transactionInformation": "Payment to ABC Store"
+    },
+    {
+      "transactionId": "987654-3000-20260310-091500-123456789013",
+      "accountId": "3000",
+      "amount": 2500.0,
+      "currency": "GBP",
+      "creditDebitIndicator": "CREDIT",
+      "status": "BOOKED",
+      "bookingDateTime": "2026-03-10T09:15:00Z",
+      "valueDateTime": "2026-03-10T09:15:00Z",
+      "transactionInformation": "Salary"
+    }
+  ],
+  "totalCount": 2,
+  "limit": 50,
+  "offset": 0
+}

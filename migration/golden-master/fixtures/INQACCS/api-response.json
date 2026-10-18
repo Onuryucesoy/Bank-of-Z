@@ -1,0 +1,35 @@
+{
+  "accounts": [
+    {
+      "accountId": "3000",
+      "accountType": "CURRENT",
+      "currency": "GBP",
+      "accountNumber": "00003000",
+      "sortCode": "987654",
+      "status": "ACTIVE",
+      "openingDate": "2020-01-15",
+      "customerId": "0000000001"
+    },
+    {
+      "accountId": "3001",
+      "accountType": "SAVINGS",
+      "currency": "GBP",
+      "accountNumber": "00003001",
+      "sortCode": "987654",
+      "status": "ACTIVE",
+      "openingDate": "2020-01-15",
+      "customerId": "0000000001"
+    },
+    {
+      "accountId": "3002",
+      "accountType": "LOAN",
+      "currency": "GBP",
+      "accountNumber": "00003002",
+      "sortCode": "987654",
+      "status": "ACTIVE",
+      "openingDate": "2020-01-15",
+      "customerId": "0000000001"
+    }
+  ],
+  "totalCount": 3
+}

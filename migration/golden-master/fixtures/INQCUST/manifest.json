@@ -1,0 +1,14 @@
+{
+  "asset": "INQCUST",
+  "synthetic": true,
+  "note": "Hand-made from the generated schemas; replace with z/OS Connect captures in Phase 2 (see ../../README.md)",
+  "requestSchema": "src/api/src/main/zosAssets/INQCUST/providerFiles/gen/requestSchema.json",
+  "responseSchema": "src/api/src/main/zosAssets/INQCUST/providerFiles/gen/responseSchema.json",
+  "apiCall": {
+    "operationId": "getCustomer",
+    "method": "GET",
+    "path": "/customers/0000000001",
+    "status": 200,
+    "schema": "Customer"
+  }
+}

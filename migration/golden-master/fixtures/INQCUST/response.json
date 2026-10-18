@@ -1,0 +1,42 @@
+{
+  "commarea": {
+    "INQCUSTZ": {
+      "INQCUST-EYE": "CUST",
+      "INQCUST-SCODE": "987654",
+      "INQCUST-CUSTNO": 1,
+      "INQCUST-NAME": {
+        "INQCUST-TITLE": "Mr",
+        "INQCUST-FIRST-NAME": "John",
+        "INQCUST-LAST-NAME": "Smith"
+      },
+      "INQCUST-DOB": {
+        "INQCUST-DOB-DD": 15,
+        "INQCUST-DOB-MM": 6,
+        "INQCUST-DOB-YYYY": 1985
+      },
+      "INQCUST-PHONE": "+44 20 7946 0958",
+      "INQCUST-ADDR": {
+        "INQCUST-ADDR-LINE1": "123 High Street",
+        "INQCUST-ADDR-LINE2": "Apartment 4B",
+        "INQCUST-CITY": "London",
+        "INQCUST-POSTCODE": "SW1A 1AA",
+        "INQCUST-COUNTRY": "United Kingdom"
+      },
+      "INQCUST-STATUS": "ACTIVE",
+      "INQCUST-CREATED-DATE": {
+        "INQCUST-CREATED-DD": 15,
+        "INQCUST-CREATED-MM": 1,
+        "INQCUST-CREATED-YYYY": 2020
+      },
+      "INQCUST-CREDIT-SCORE": 742,
+      "INQCUST-CS-REVIEW-DT": {
+        "INQCUST-CS-REVIEW-DD": 1,
+        "INQCUST-CS-REVIEW-MM": 3,
+        "INQCUST-CS-REVIEW-YYYY": 2026
+      },
+      "INQCUST-INQ-SUCCESS": "Y",
+      "INQCUST-INQ-FAIL-CD": "0",
+      "INQCUST-PCB-POINTER": ""
+    }
+  }
+}

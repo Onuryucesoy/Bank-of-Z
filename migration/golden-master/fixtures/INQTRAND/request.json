@@ -1,0 +1,33 @@
+{
+  "commarea": {
+    "INQTRAND-COMMAREA": {
+      "INQTRAND-EYE": "PRTR",
+      "INQTRAND-SORTCODE": 987654,
+      "INQTRAND-ACCNO": 3000,
+      "INQTRAND-DATE": 20260312,
+      "INQTRAND-TIME": 143000,
+      "INQTRAND-REF": 123456789012,
+      "INQTRAND-SUCCESS": "",
+      "INQTRAND-FOUND": "",
+      "INQTRAND-TRAN-ID": "",
+      "INQTRAND-TRAN-SORTCODE": 0,
+      "INQTRAND-TRAN-ACCNO": 0,
+      "INQTRAND-TRAN-DATE": 0,
+      "INQTRAND-TRAN-DATE-GRP": {
+        "INQTRAND-TRAN-DATE-YYYY": 0,
+        "INQTRAND-TRAN-DATE-MM": 0,
+        "INQTRAND-TRAN-DATE-DD": 0
+      },
+      "INQTRAND-TRAN-TIME": 0,
+      "INQTRAND-TRAN-TIME-GRP": {
+        "INQTRAND-TRAN-TIME-HH": 0,
+        "INQTRAND-TRAN-TIME-MM": 0,
+        "INQTRAND-TRAN-TIME-SS": 0
+      },
+      "INQTRAND-TRAN-REF": 0,
+      "INQTRAND-TRAN-TYPE": "",
+      "INQTRAND-TRAN-DESC": "",
+      "INQTRAND-TRAN-AMOUNT": 0
+    }
+  }
+}
