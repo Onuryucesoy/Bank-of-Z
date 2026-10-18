@@ -1,0 +1,80 @@
+{
+  "transaction": "DBCRFUN",
+  "program": "src/base/cics/cobol/DBCRFUN.cbl",
+  "interface": "CICS_COMMAREA",
+  "copybook": "src/base/cics/copy/PAYDBCR.cpy",
+  "record": "PAYDBCR",
+  "ccsid": 37,
+  "baseline": {
+    "status": "HAND_AUTHORED_UNVALIDATED",
+    "note": "Baseline derived from copybook layout and COBOL source reading; must be re-captured from the live CICS region before Phase 2 shadow comparison (see tests/golden/README.md).",
+    "derivedFrom": [
+      "src/base/cics/copy/PAYDBCR.cpy",
+      "src/api/src/main/operations/deposit"
+    ]
+  },
+  "cases": [
+    {
+      "name": "web-credit",
+      "description": "POST /accounts/10/deposit: z/OS Connect sets COMM-FACILTYPE=496 so PROCTRAN type is 'PCR'.",
+      "request": {
+        "COMM-ACCNO": "00000010",
+        "COMM-AMT": "250.00",
+        "COMM-SORTC": "987654",
+        "COMM-FACILTYPE": "496",
+        "COMM-DESCRIPTION": "Deposit"
+      },
+      "response": {
+        "COMM-ACCNO": "00000010",
+        "COMM-AMT": "250.00",
+        "COMM-SORTC": "987654",
+        "COMM-FACILTYPE": "496",
+        "COMM-DESCRIPTION": "Deposit",
+        "COMM-AV-BAL": "1484.56",
+        "COMM-ACT-BAL": "1484.56",
+        "COMM-SUCCESS": "Y",
+        "COMM-FAIL-CODE": "0"
+      }
+    },
+    {
+      "name": "insufficient-funds",
+      "description": "Web debit beyond available balance: success N, fail code '3'.",
+      "request": {
+        "COMM-ACCNO": "00000010",
+        "COMM-AMT": "-99999.00",
+        "COMM-SORTC": "987654",
+        "COMM-FACILTYPE": "496",
+        "COMM-DESCRIPTION": "Deposit"
+      },
+      "response": {
+        "COMM-ACCNO": "00000010",
+        "COMM-AMT": "-99999.00",
+        "COMM-SORTC": "987654",
+        "COMM-FACILTYPE": "496",
+        "COMM-DESCRIPTION": "Deposit",
+        "COMM-SUCCESS": "N",
+        "COMM-FAIL-CODE": "3"
+      }
+    },
+    {
+      "name": "account-not-found",
+      "description": "Unknown account: fail code '1'.",
+      "request": {
+        "COMM-ACCNO": "99999990",
+        "COMM-AMT": "250.00",
+        "COMM-SORTC": "987654",
+        "COMM-FACILTYPE": "496",
+        "COMM-DESCRIPTION": "Deposit"
+      },
+      "response": {
+        "COMM-ACCNO": "99999990",
+        "COMM-AMT": "250.00",
+        "COMM-SORTC": "987654",
+        "COMM-FACILTYPE": "496",
+        "COMM-DESCRIPTION": "Deposit",
+        "COMM-SUCCESS": "N",
+        "COMM-FAIL-CODE": "1"
+      }
+    }
+  ]
+}

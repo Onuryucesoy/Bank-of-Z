@@ -1,0 +1,73 @@
+{
+  "transaction": "INQACC",
+  "program": "src/base/cics/cobol/INQACC.cbl",
+  "interface": "CICS_COMMAREA",
+  "copybook": "src/base/cics/copy/INQACC.cpy",
+  "record": "INQACC-COMMAREA",
+  "ccsid": 37,
+  "baseline": {
+    "status": "HAND_AUTHORED_UNVALIDATED",
+    "note": "Baseline derived from copybook layout and COBOL source reading; must be re-captured from the live CICS region before Phase 2 shadow comparison (see tests/golden/README.md).",
+    "derivedFrom": [
+      "src/base/cics/copy/INQACC.cpy",
+      "src/api/src/main/operations/getAccount"
+    ]
+  },
+  "cases": [
+    {
+      "name": "found",
+      "description": "GET /accounts/10: dates DDMMYYYY, balances signed zoned S9(10)V99.",
+      "request": {
+        "INQACC-ACCNO": "10"
+      },
+      "response": {
+        "INQACC-EYE": "ACCT",
+        "INQACC-CUSTNO": "1",
+        "INQACC-SCODE": "987654",
+        "INQACC-ACCNO": "10",
+        "INQACC-ACC-TYPE": "CURRENT",
+        "INQACC-INT-RATE": "0.50",
+        "INQACC-OPENED": "01022020",
+        "INQACC-OVERDRAFT": "500",
+        "INQACC-LAST-STMT-DT": "01092026",
+        "INQACC-NEXT-STMT-DT": "01102026",
+        "INQACC-AVAIL-BAL": "1234.56",
+        "INQACC-ACTUAL-BAL": "1234.56",
+        "INQACC-SUCCESS": "Y"
+      }
+    },
+    {
+      "name": "overdrawn",
+      "description": "Negative balance exercises the zoned sign overpunch (X'D' zone in last byte).",
+      "request": {
+        "INQACC-ACCNO": "11"
+      },
+      "response": {
+        "INQACC-EYE": "ACCT",
+        "INQACC-CUSTNO": "1",
+        "INQACC-SCODE": "987654",
+        "INQACC-ACCNO": "11",
+        "INQACC-ACC-TYPE": "CURRENT",
+        "INQACC-INT-RATE": "0.50",
+        "INQACC-OPENED": "01022020",
+        "INQACC-OVERDRAFT": "500",
+        "INQACC-LAST-STMT-DT": "01092026",
+        "INQACC-NEXT-STMT-DT": "01102026",
+        "INQACC-AVAIL-BAL": "-75.20",
+        "INQACC-ACTUAL-BAL": "-75.20",
+        "INQACC-SUCCESS": "Y"
+      }
+    },
+    {
+      "name": "not-found",
+      "description": "Account absent: INQACC still returns success 'Y' with an empty record (observed in INQACC.cbl).",
+      "request": {
+        "INQACC-ACCNO": "99999990"
+      },
+      "response": {
+        "INQACC-ACCNO": "0",
+        "INQACC-SUCCESS": "Y"
+      }
+    }
+  ]
+}

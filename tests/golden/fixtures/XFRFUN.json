@@ -1,0 +1,61 @@
+{
+  "transaction": "XFRFUN",
+  "program": "src/base/cics/cobol/XFRFUN.cbl",
+  "interface": "CICS_COMMAREA",
+  "copybook": "src/base/cics/copy/XFRFUN.cpy",
+  "record": "XFRFUN",
+  "ccsid": 37,
+  "baseline": {
+    "status": "HAND_AUTHORED_UNVALIDATED",
+    "note": "Baseline derived from copybook layout and COBOL source reading; must be re-captured from the live CICS region before Phase 2 shadow comparison (see tests/golden/README.md).",
+    "derivedFrom": [
+      "src/base/cics/copy/XFRFUN.cpy"
+    ]
+  },
+  "cases": [
+    {
+      "name": "transferred",
+      "description": "Both legs updated in one UOW; PROCTRAN 'TFR'.",
+      "request": {
+        "COMM-FACCNO": "10",
+        "COMM-FSCODE": "987654",
+        "COMM-TACCNO": "11",
+        "COMM-TSCODE": "987654",
+        "COMM-AMT": "100.00"
+      },
+      "response": {
+        "COMM-FACCNO": "10",
+        "COMM-FSCODE": "987654",
+        "COMM-TACCNO": "11",
+        "COMM-TSCODE": "987654",
+        "COMM-AMT": "100.00",
+        "COMM-FAVBAL": "1134.56",
+        "COMM-FACTBAL": "1134.56",
+        "COMM-TAVBAL": "24.80",
+        "COMM-TACTBAL": "24.80",
+        "COMM-SUCCESS": "Y",
+        "COMM-FAIL-CODE": " "
+      }
+    },
+    {
+      "name": "non-positive-amount",
+      "description": "Amount <= 0: success N, fail code '4', no SQL issued.",
+      "request": {
+        "COMM-FACCNO": "10",
+        "COMM-FSCODE": "987654",
+        "COMM-TACCNO": "11",
+        "COMM-TSCODE": "987654",
+        "COMM-AMT": "-5.00"
+      },
+      "response": {
+        "COMM-FACCNO": "10",
+        "COMM-FSCODE": "987654",
+        "COMM-TACCNO": "11",
+        "COMM-TSCODE": "987654",
+        "COMM-AMT": "-5.00",
+        "COMM-SUCCESS": "N",
+        "COMM-FAIL-CODE": "4"
+      }
+    }
+  ]
+}

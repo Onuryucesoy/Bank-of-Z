@@ -1,0 +1,64 @@
+{
+  "transaction": "INQCUST",
+  "program": "src/base/cics/cobol/INQCUST.cbl",
+  "interface": "CICS_COMMAREA",
+  "copybook": "src/base/cics/copy/INQCUSTZ.cpy",
+  "record": "INQCUSTZ",
+  "ccsid": 37,
+  "baseline": {
+    "status": "HAND_AUTHORED_UNVALIDATED",
+    "note": "Baseline derived from copybook layout and COBOL source reading; must be re-captured from the live CICS region before Phase 2 shadow comparison (see tests/golden/README.md).",
+    "derivedFrom": [
+      "src/base/cics/copy/INQCUSTZ.cpy",
+      "src/api/src/main/operations/getCustomer"
+    ]
+  },
+  "cases": [
+    {
+      "name": "found",
+      "description": "GET /customers/C1: existing customer returned, success Y.",
+      "request": {
+        "INQCUST-CUSTNO": "1"
+      },
+      "response": {
+        "INQCUST-EYE": "CUST",
+        "INQCUST-SCODE": "987654",
+        "INQCUST-CUSTNO": "1",
+        "INQCUST-TITLE": "Mr",
+        "INQCUST-FIRST-NAME": "Andrew",
+        "INQCUST-LAST-NAME": "Smith",
+        "INQCUST-DOB-DD": "15",
+        "INQCUST-DOB-MM": "06",
+        "INQCUST-DOB-YYYY": "1980",
+        "INQCUST-PHONE": "01962 815000",
+        "INQCUST-ADDR-LINE1": "1 High Street",
+        "INQCUST-ADDR-LINE2": "Hursley",
+        "INQCUST-CITY": "Winchester",
+        "INQCUST-POSTCODE": "SO21 2JN",
+        "INQCUST-COUNTRY": "United Kingdom",
+        "INQCUST-STATUS": "ACTIVE",
+        "INQCUST-CREATED-DD": "01",
+        "INQCUST-CREATED-MM": "02",
+        "INQCUST-CREATED-YYYY": "2020",
+        "INQCUST-CREDIT-SCORE": "450",
+        "INQCUST-CS-REVIEW-DD": "20",
+        "INQCUST-CS-REVIEW-MM": "02",
+        "INQCUST-CS-REVIEW-YYYY": "2020",
+        "INQCUST-INQ-SUCCESS": "Y",
+        "INQCUST-INQ-FAIL-CD": "0"
+      }
+    },
+    {
+      "name": "not-found",
+      "description": "Unknown customer number: success N, fail code '1'.",
+      "request": {
+        "INQCUST-CUSTNO": "9999999998"
+      },
+      "response": {
+        "INQCUST-CUSTNO": "9999999998",
+        "INQCUST-INQ-SUCCESS": "N",
+        "INQCUST-INQ-FAIL-CD": "1"
+      }
+    }
+  ]
+}
