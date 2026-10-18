@@ -67,6 +67,25 @@ All counts and names in this document come from the repository at the time of wr
 | `GET /ims/customers/{customerId}/accounts`, `GET /ims/accounts/{accountId}`, `GET /ims/accounts/{accountId}/balances` | `IBACSUM` | IMS |
 | `POST /ims/accounts/{customerId}/{accountId}/deposit` | `IBTRAN` | IMS |
 
+### Current test coverage
+
+`tests/run-all.sh` (run by `task-install-verification.sh`) checks 4 of the 17 API operations, and all 4 are reads. This is the gap that Phase 0, deliverable 4, closes before any code moves.
+
+| Area | Covered by | Depth of checks |
+|------|------------|-----------------|
+| Frontend | `test_frontend.sh`: `GET /admin.html` | HTTP status only |
+| `GET /customers/{customerId}` (CICS) | `test_get_customer_cics.sh` | `lastName` only |
+| `GET /ims/customers/{customerId}`, `GET /ims/customers/{customerId}/accounts`, `GET /ims/accounts/{accountId}/balances` | `test_get_customer_ims.sh` | Fields are non-empty; only `customerId` is checked for an exact value |
+| The other 13 operations, including every write (`POST`/`PUT`/`DELETE` customers, both deposits) | None | None |
+| BMS/3270-only programs (`XFRFUN`, `UPDACC`, `CREACC`, `DELACC`, `BNK1*`) | None | None |
+| Batch `BNKSTMT` | None | None |
+| `src/base/ims/java` (no `src/test`, no test dependencies) and `IBGHIST` | None | None |
+
+The scripts parse only a few JSON fields, so they cannot catch differences in other fields, in numeric format or padding, or in the underlying COMMAREA or IMS message bytes. Three notes for anyone extending the suite:
+- The IMS `accountId` path parameter is mapped to `IN-CUSTID` by `IBACSUM`, so these paths take a customer ID. This matches how `src/frontend/js/api.js` calls them.
+- `BANKDATA` generates CICS account numbers and does not load `PROCTRAN`, so CICS account tests should take their account IDs from the customer's account list, and transaction-detail tests should skip when the list is empty.
+- Batch output and the 3270-only programs are covered by the byte comparisons in Phases 2 and 3, not by `tests/`.
+
 ### Existing IMS Java code
 
 The code under `src/base/ims/java` is **real, deployed transaction logic, not a sample.** Its scope is narrow, though: it only handles transaction history held in Db2 (`IMSBANK.HISTORY`). All DL/I database access and all business rules are still in COBOL and PL/I.
