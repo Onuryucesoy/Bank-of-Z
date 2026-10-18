@@ -66,6 +66,11 @@
     url: /docs/development-workflows/development-best-practices.html
   - title: Workflow Comparison
     url: /docs/development-workflows/workflow-comparison.html
+- title: Migration
+  url: /docs/migration/
+  children:
+  - title: Java Migration Plan
+    url: /docs/migration/java-migration-plan.html
 - title: Reference
   url: /docs/reference/
   children:
