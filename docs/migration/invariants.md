@@ -4,6 +4,16 @@ Behaviour that is not visible in any single copybook or API mapping but that
 the Java port must preserve. Each item cites the COBOL it was read from;
 line numbers refer to this commit.
 
+> **Terminology vs. code.** The migration brief and CRECUST's own comments
+> call `BANKZCUST` a *named counter* and describe the credit check as a
+> `START TRANSID`. Neither is what the code does: there is no
+> `GET COUNTER`/`DEFINE COUNTER` (the "named counter" is a CICS `ENQ` on the
+> name plus a Db2 `CONTROL` row, §1, and `UPD-NCS` only calls
+> `GET-LAST-CUSTOMER-DB2`), and the fan-out is `EXEC CICS RUN TRANSID ...
+> CHILD` with `FETCH ANY`, not `START` (§2). `RUN` returns a child token the
+> parent can wait on; `START` would be fire-and-forget. The Java contracts
+> below follow the code.
+
 ## 1. `BANKZCUST` customer-number allocation
 
 **Source:** `src/base/cics/cobol/CRECUST.cbl` (`ENQ-NAMED-COUNTER`,

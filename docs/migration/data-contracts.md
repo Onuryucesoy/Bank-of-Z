@@ -189,7 +189,7 @@ contracts, and are excluded.
 ### CRECUST
 
 - **Location:** `src/base/cics/copy/CRECUST.cpy`
-- **Consumers:** `CRECUST`; z/OS Connect assets: zosAssets
+- **Consumers:** `CRECUST`; z/OS Connect asset `CRECUST` (`providerFiles/*.dai` maps `CRECUST.cpy`)
 
 
 **CRECUST** — 399 bytes
@@ -264,7 +264,7 @@ contracts, and are excluded.
 ### CUSTOMER
 
 - **Location:** `src/base/cics/copy/CUSTOMER.cpy`
-- **Consumers:** `BANKDATA`, `CRDTAGY1`, `CRDTAGY2`, `CRDTAGY3`, `CRDTAGY4`, `CRDTAGY5`, `CREACC`, `CRECUST`, `DELCUS`, `INQACCCU`, `INQCUST`, `UPDCUST`; z/OS Connect assets: zosAssets
+- **Consumers:** `BANKDATA`, `CRDTAGY1`, `CRDTAGY2`, `CRDTAGY3`, `CRDTAGY4`, `CRDTAGY5`, `CREACC`, `CRECUST`, `DELCUS`, `INQACCCU`, `INQCUST`, `UPDCUST`; z/OS Connect asset `INQCUST` generated copybook `CUSTOMER_response_0.cpy` only (the asset's `.dai` maps `INQCUSTZ.cpy`)
 
 
 **CUSTOMER** — 397 bytes
@@ -390,7 +390,7 @@ contracts, and are excluded.
 ### DELCUS
 
 - **Location:** `src/base/cics/copy/DELCUS.cpy`
-- **Consumers:** `BNK1DCS`, `DELCUS`; z/OS Connect assets: zosAssets
+- **Consumers:** `BNK1DCS`, `DELCUS`; z/OS Connect asset `DELCUS` (`providerFiles/*.dai` maps `DELCUS.cpy`)
 
 
 **DELCUS** — 399 bytes
@@ -536,7 +536,7 @@ contracts, and are excluded.
 ### INQACCCZ
 
 - **Location:** `src/base/cics/copy/INQACCCZ.cpy`
-- **Consumers:** _no COPY in COBOL source_; z/OS Connect assets: zosAssets
+- **Consumers:** _no COPY in COBOL source_; z/OS Connect asset `INQACCCU` (`providerFiles/*.dai` maps `INQACCCZ.cpy`)
 
 
 **INQACCCZ** — 1981 bytes
@@ -578,7 +578,7 @@ contracts, and are excluded.
 ### INQACCS
 
 - **Location:** `src/base/cics/copy/INQACCS.cpy`
-- **Consumers:** `INQACCS`; z/OS Connect assets: zosAssets
+- **Consumers:** `INQACCS`; z/OS Connect asset `INQACCS` generated copybook `INQACCS_request_0.cpy`/`INQACCS_response_0.cpy` only (the asset's `.dai` maps `INQACCSZ.cpy`)
 
 
 **INQACCS** — 1970 bytes
@@ -618,7 +618,7 @@ contracts, and are excluded.
 ### INQACCSZ
 
 - **Location:** `src/base/cics/copy/INQACCSZ.cpy`
-- **Consumers:** _no COPY in COBOL source_; z/OS Connect assets: zosAssets
+- **Consumers:** _no COPY in COBOL source_; z/OS Connect asset `INQACCS` (`providerFiles/*.dai` maps `INQACCSZ.cpy`)
 
 
 **INQACCS** — 1970 bytes
@@ -658,7 +658,7 @@ contracts, and are excluded.
 ### INQACCZ
 
 - **Location:** `src/base/cics/copy/INQACCZ.cpy`
-- **Consumers:** _no COPY in COBOL source_
+- **Consumers:** _no COPY in COBOL source_; z/OS Connect asset `INQACC` (`providerFiles/*.dai` maps `INQACCZ.cpy`)
 
 
 **INQACC-COMMAREA** — 103 bytes
@@ -695,7 +695,7 @@ contracts, and are excluded.
 ### INQCUSTZ
 
 - **Location:** `src/base/cics/copy/INQCUSTZ.cpy`
-- **Consumers:** `BNK1DCS`, `CREACC`, `DELCUS`, `INQACCCU`, `INQCUST`; z/OS Connect assets: zosAssets
+- **Consumers:** `BNK1DCS`, `CREACC`, `DELCUS`, `INQACCCU`, `INQCUST`; z/OS Connect asset `INQCUST` (`providerFiles/*.dai` maps `INQCUSTZ.cpy`)
 
 
 **INQCUSTZ** — 403 bytes
@@ -737,7 +737,7 @@ contracts, and are excluded.
 ### INQTRAND
 
 - **Location:** `src/base/cics/copy/INQTRAND.cpy`
-- **Consumers:** `INQTRAND`; z/OS Connect assets: zosAssets
+- **Consumers:** `INQTRAND`; z/OS Connect asset `INQTRAND` (`providerFiles/*.dai` maps `INQTRAND.cpy`)
 
 
 **INQTRAND-COMMAREA** — 191 bytes
@@ -773,7 +773,7 @@ contracts, and are excluded.
 ### INQTRANL
 
 - **Location:** `src/base/cics/copy/INQTRANL.cpy`
-- **Consumers:** `INQTRANL`; z/OS Connect assets: zosAssets
+- **Consumers:** `INQTRANL`; z/OS Connect asset `INQTRANL` (`providerFiles/*.dai` maps `INQTRANL.cpy`)
 
 
 **INQTRANL-COMMAREA** — 14551 bytes
@@ -868,7 +868,7 @@ contracts, and are excluded.
 ### PAYDBCRZ
 
 - **Location:** `src/base/cics/copy/PAYDBCRZ.cpy`
-- **Consumers:** _no COPY in COBOL source_; z/OS Connect assets: zosAssets
+- **Consumers:** _no COPY in COBOL source_; z/OS Connect asset `DBCRFUN` (`providerFiles/*.dai` maps `PAYDBCRZ.cpy`)
 
 
 **PAYDBCRZ** — 132 bytes
@@ -1112,7 +1112,7 @@ contracts, and are excluded.
 ### UPDCUST
 
 - **Location:** `src/base/cics/copy/UPDCUST.cpy`
-- **Consumers:** `BNK1DCS`, `UPDCUST`; z/OS Connect assets: zosAssets
+- **Consumers:** `BNK1DCS`, `UPDCUST`; z/OS Connect asset `UPDCUST` (`providerFiles/*.dai` maps `UPDCUST.cpy`)
 
 
 **UPDCUST** — 399 bytes
@@ -1231,7 +1231,7 @@ contracts, and are excluded.
 ### IBTRAN
 
 - **Location:** `src/base/ims/copy/IBTRAN.cpy`
-- **Consumers:** _no COPY in COBOL source_
+- **Consumers:** _no COPY in COBOL source_; z/OS Connect asset `IBTRAN` (`providerFiles/*.dai` maps `IBTRAN.cpy`)
 
 
 **INPUT-AREA** — 56 bytes
@@ -1262,10 +1262,10 @@ contracts, and are excluded.
 | 10 | &nbsp;&nbsp;`ACCTYPE-AS` | 56 | 1 | `X(1)` | DISPLAY | String | CP037 text, space padded |
 | 10 | &nbsp;&nbsp;`ACCID-AS` | 57 | 8 | `S9(18)` | NATIVE_BINARY | long | big-endian binary, full native range |
 
-### zosAssets — INPUT-AREA_request_0
+### IBACSUM — INPUT-AREA_request_0
 
 - **Location:** `src/api/src/main/zosAssets/IBACSUM/providerFiles/gen/INPUT-AREA_request_0.cpy`
-- **Consumers:** IMS MPP `zosAssets` (z/OS Connect IMS service `zosAssets`)
+- **Consumers:** IMS MPP `IBACSUM` (z/OS Connect IMS asset `IBACSUM`)
 
 
 **INPUT-AREA** — 21 bytes
@@ -1277,10 +1277,10 @@ contracts, and are excluded.
 | 5 | `TRAN-CODE` | 4 | 8 | `X(8)` | DISPLAY | String | CP037 text, space padded |
 | 5 | `IN-CUSTID` | 12 | 9 | `X(9)` | DISPLAY | String | CP037 text, space padded |
 
-### zosAssets — OUTPUT-AREA_response_0
+### IBACSUM — OUTPUT-AREA_response_0
 
 - **Location:** `src/api/src/main/zosAssets/IBACSUM/providerFiles/gen/OUTPUT-AREA_response_0.cpy`
-- **Consumers:** IMS MPP `zosAssets` (z/OS Connect IMS service `zosAssets`)
+- **Consumers:** IMS MPP `IBACSUM` (z/OS Connect IMS asset `IBACSUM`)
 
 
 **OUTPUT-AREA** — 139 bytes
@@ -1296,10 +1296,10 @@ contracts, and are excluded.
 | 10 | &nbsp;&nbsp;`ACCTYPE-AS` | 45 | 1 | `X` | DISPLAY | String | CP037 text, space padded |
 | 10 | &nbsp;&nbsp;`ACCID-AS` | 46 | 8 | `S9(18)` | NATIVE_BINARY | long | big-endian binary, full native range |
 
-### zosAssets — INPUT-AREA_request_0
+### IBGCUDAT — INPUT-AREA_request_0
 
 - **Location:** `src/api/src/main/zosAssets/IBGCUDAT/providerFiles/gen/INPUT-AREA_request_0.cpy`
-- **Consumers:** IMS MPP `zosAssets` (z/OS Connect IMS service `zosAssets`)
+- **Consumers:** IMS MPP `IBGCUDAT` (z/OS Connect IMS asset `IBGCUDAT`)
 
 
 **INPUT-AREA** — 21 bytes
@@ -1311,10 +1311,10 @@ contracts, and are excluded.
 | 5 | `TRAN-CODE` | 4 | 8 | `X(8)` | DISPLAY | String | CP037 text, space padded |
 | 5 | `IN-CUSTID` | 12 | 9 | `X(9)` | DISPLAY | String | CP037 text, space padded |
 
-### zosAssets — OUTPUT-AREA_response_0
+### IBGCUDAT — OUTPUT-AREA_response_0
 
 - **Location:** `src/api/src/main/zosAssets/IBGCUDAT/providerFiles/gen/OUTPUT-AREA_response_0.cpy`
-- **Consumers:** IMS MPP `zosAssets` (z/OS Connect IMS service `zosAssets`)
+- **Consumers:** IMS MPP `IBGCUDAT` (z/OS Connect IMS asset `IBGCUDAT`)
 
 
 **OUTPUT-AREA** — 279 bytes
@@ -1333,10 +1333,10 @@ contracts, and are excluded.
 | 5 | `PHONE-OUT` | 258 | 12 | `X(12)` | DISPLAY | String | CP037 text, space padded |
 | 5 | `CUSTID-OUT` | 270 | 9 | `X(9)` | DISPLAY | String | CP037 text, space padded |
 
-### zosAssets — INPUT-AREA_request_0
+### IBSCUDAT — INPUT-AREA_request_0
 
 - **Location:** `src/api/src/main/zosAssets/IBSCUDAT/providerFiles/gen/INPUT-AREA_request_0.cpy`
-- **Consumers:** IMS MPP `zosAssets` (z/OS Connect IMS service `zosAssets`)
+- **Consumers:** IMS MPP `IBSCUDAT` (z/OS Connect IMS asset `IBSCUDAT`)
 
 
 **INPUT-AREA** — 250 bytes
@@ -1356,10 +1356,10 @@ contracts, and are excluded.
 | 10 | &nbsp;&nbsp;`ZIPCODE-IN` | 223 | 15 | `X(15)` | DISPLAY | String | CP037 text, space padded |
 | 10 | &nbsp;&nbsp;`PHONE-IN` | 238 | 12 | `X(12)` | DISPLAY | String | CP037 text, space padded |
 
-### zosAssets — OUTPUT-AREA_response_0
+### IBSCUDAT — OUTPUT-AREA_response_0
 
 - **Location:** `src/api/src/main/zosAssets/IBSCUDAT/providerFiles/gen/OUTPUT-AREA_response_0.cpy`
-- **Consumers:** IMS MPP `zosAssets` (z/OS Connect IMS service `zosAssets`)
+- **Consumers:** IMS MPP `IBSCUDAT` (z/OS Connect IMS asset `IBSCUDAT`)
 
 
 **OUTPUT-AREA** — 274 bytes
@@ -1379,10 +1379,10 @@ contracts, and are excluded.
 | 10 | &nbsp;&nbsp;`ZIPCODE-OUT` | 247 | 15 | `X(15)` | DISPLAY | String | CP037 text, space padded |
 | 10 | &nbsp;&nbsp;`PHONE-OUT` | 262 | 12 | `X(12)` | DISPLAY | String | CP037 text, space padded |
 
-### zosAssets — INPUT-AREA_request_0
+### IBTRAN — INPUT-AREA_request_0
 
 - **Location:** `src/api/src/main/zosAssets/IBTRAN/providerFiles/gen/INPUT-AREA_request_0.cpy`
-- **Consumers:** IMS MPP `zosAssets` (z/OS Connect IMS service `zosAssets`)
+- **Consumers:** IMS MPP `IBTRAN` (z/OS Connect IMS asset `IBTRAN`)
 
 
 **INPUT-AREA** — 56 bytes
@@ -1397,10 +1397,10 @@ contracts, and are excluded.
 | 5 | `IN-TRXTYPE` | 46 | 1 | `X` | DISPLAY | String | CP037 text, space padded |
 | 5 | `IN-CUSTID` | 47 | 9 | `X(9)` | DISPLAY | String | CP037 text, space padded |
 
-### zosAssets — OUTPUT-AREA_response_0
+### IBTRAN — OUTPUT-AREA_response_0
 
 - **Location:** `src/api/src/main/zosAssets/IBTRAN/providerFiles/gen/OUTPUT-AREA_response_0.cpy`
-- **Consumers:** IMS MPP `zosAssets` (z/OS Connect IMS service `zosAssets`)
+- **Consumers:** IMS MPP `IBTRAN` (z/OS Connect IMS asset `IBTRAN`)
 
 
 **OUTPUT-AREA** — 150 bytes
