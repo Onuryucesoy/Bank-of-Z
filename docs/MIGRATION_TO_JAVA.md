@@ -94,13 +94,13 @@ These come from the current source on `main`. Each one changes scope or adds a d
 | **Unit** | Java services, mappers, and COBOL-type converters (`PIC 9(n)` zero-padded `CHAR`, `S9(10)V99` zoned decimal, `COMP-3`, `INTEGER YYYYMMDD` dates, EBCDIC CCSID 037) | JUnit 5, property-based tests (jqwik) for codecs, JaCoCo | Every PR on GitHub-hosted runners | Phase 1 |
 | **Data-layer integration** | SQL behaves the same against the real schema (types, scale, constraints, ordering) | Db2 Community container (Testcontainers `Db2Container`, image `icr.io/db2_community/db2`), schema loaded from `.setup/jcl/cics/Db2-create.j2`; H2 Db2-mode only for fast feedback | Every PR | Phase 1 |
 | **Shadow parity** | In production, Java gives the same answers as COBOL for real traffic | Gateway sends each request to both backends; a diff service compares normalized JSON (and Db2 row deltas for writes) and logs differences. Only the COBOL response goes back to the client | Production / pre-prod, per operation | Phase 2 (reads), Phase 3 (writes, see below) |
-| **Concurrency / load** | No lost updates, deadlock handling, latency at least as good as COBOL | Gatling/JMeter; scripted parallel debits/transfers on the same account; balance-invariant check | Pre-prod, before each write cutover | Phase 3 |
+| **Concurrency / load** | No lost updates, deadlock handling, latency at least as good as COBOL | Gatling/JMeter; scripted parallel debits/transfers on the same account; sum-of-balances invariant for transfers, and final balance = start − accepted debits for parallel debits | Pre-prod, before each write cutover | Phase 3 |
 | **End-to-end (frontend)** | The JS UI still works with no change, for both `C…` (CICS) and `I…` (IMS) customers | Extend `tests/*.sh` to all 17 operations; Playwright for the main UI journeys (view, create/update/delete customer, deposit, transactions) | Nightly on the z/OS test environment, and at each cutover | Phase 1 |
 | **Batch output diff** | Spring Batch statements are identical to `BNKSTMT` output | Run both on the same Db2 snapshot and `DATECARD`/`SORTCODE`; file diff | Each batch release | Phase 4 |
 | **Data reconciliation** | Migrated data equals source data | Row counts, column checksums, sums of balances per account type, referential checks (`CUSTACCS` ↔ `ACCOUNT`) | Every rehearsal and the final move | Phase 5 |
 | **Resilience / rollback drills** | Routing flips back cleanly; a dependency outage (Db2, credit agency, IMS) fails safely | Gateway route flip under load; fault injection (Toxiproxy, timeouts) | Before each cutover | Phase 1 |
 
-**Writes in shadow mode:** a write can't simply run twice against production. Options: (a) replay captured production writes against a pre-prod copy of Db2 on both backends and compare the resulting rows, or (b) run Java in "compute-only" mode, where it builds the SQL it *would* execute and the result is compared with what COBOL actually did. Option (a) is the default; option (b) is for high-volume operations (`DBCRFUN`).
+**Writes in shadow mode:** a write can't simply run twice against production. Options: (a) replay captured production writes against a pre-prod copy of Db2 on both backends and compare the resulting rows, or (b) run Java in "compute-only" mode, where it builds the SQL it *would* execute and the result is compared with what COBOL actually did. Option (a) is the default; option (b) is for high-volume operations (`DBCRFUN`). In option (a), each backend replays against its **own restored copy of the same snapshot** (or the affected rows and dependent tables, such as `PROCTRAN` and `CONTROL`, are reset between runs). Responses and row deltas are compared only from identical starting states, because otherwise the second run starts from rows the first run already changed.
 
 ### Test data
 
@@ -119,7 +119,7 @@ Each item gets a test that pins the **current** behaviour, plus a recorded decis
 | `INQACC` | `99999999` returns the last account and abends on an empty table; not-found still returns success `'Y'` | Empty-table and not-found responses |
 | `DBCRFUN` | Insufficient funds is checked only for payments (`COMM-FACILTYPE = 496`); teller debits aren't balance-checked; payments to/from `MORTGAGE`/`LOAN` are rejected; the overdraft limit is unused | Each rule, both sides of each boundary |
 | `XFRFUN` | Rejects amount ≤ 0 and same-account transfers; no overdraft check; retries `-911` up to 5 times with a 1 s `DELAY` | Validation, deadlock retry, concurrent transfers |
-| Concurrency | Read-then-write balance updates under cursor stability can lose updates | Parallel debit test with a sum-of-balances invariant |
+| Concurrency | Read-then-write balance updates under cursor stability can lose updates | Parallel transfers: sum of balances unchanged. Parallel debits: final balance equals start minus the accepted debits, and the `PROCTRAN` row count equals the accepted count |
 | `CRECUST` | Credit agencies are called asynchronously (`RUN TRANSID`), with a 3 s wait and `FETCH ANY NOSUSPEND`; scores 1–998; the `CONTROL` counter is never decremented | Timeout, partial responses, ID gaps after failures |
 | `UPDCUST` / `UPDACC` | `UPDCUST` never changes created date or credit score; `UPDACC` changes only type, rate, and overdraft | Fields that must not change |
 | `DELCUS` | Deletes accounts (through `DELACC`) before the customer, and writes `PROCTRAN` rows | Final row state and audit rows |
@@ -137,7 +137,7 @@ Each item gets a test that pins the **current** behaviour, plus a recorded decis
 
 ### CI pipeline
 
-- **Every PR (GitHub-hosted runner, no mainframe needed):** build, unit tests, property-based codec tests, contract tests, Db2-container integration tests, the golden replay against the Java service, the JaCoCo gate, and `detect-secrets`.
+- **Every PR (GitHub-hosted runner, no mainframe needed):** build, unit tests, property-based codec tests, contract tests, Db2-container integration tests, the golden replay against the Java service, the JaCoCo gate, and `detect-secrets`. On hosted runners, operations still in *delegate* mode use a **fixture-backed delegate stub** that serves the recorded COBOL responses, so the replay checks the Java side (routing, mapping, serialization) without a mainframe. Replay against real COBOL runs only on the z/OS runner (next bullet).
 - **Nightly and before cutover (self-hosted z/OS runner, existing `PR.yml`/`Setup.yml` path):** deploy to the z/OS test environment, run the full API suite against both backends, extended `tests/*.sh`, Playwright E2E, and a golden refresh to catch drift in COBOL behaviour.
 - **Per cutover:** shadow-diff report, load test, rollback drill, and sign-off recorded in the PR or change ticket.
 
@@ -228,14 +228,14 @@ Taken from the catalog above. In short: every CICS business program is Db2-only,
   - Liberty in a CICS JVM server: COBOL is called with JCICS `Program.link()` using the same COMMAREA layouts, and Db2 is reached through the CICS Db2 attachment.
   - Standalone Liberty, or a Spring Boot jar started under JZOS: COBOL is reached through CICS TG/IPIC or the existing z/OS Connect endpoints, and Db2 through JCC type 2.
   - (`ABNDFILE`, the only VSAM file, is reachable from JZOS `ZFile` if needed.)
-- **Gateway routing.** Put a routing layer (z/OS Connect API requester, Liberty proxy, or an external API gateway) in front of both backends with a per-path route table. The frontend's `baseUrl` in `src/frontend/config.js` stays the same.
+- **Gateway routing.** Put a routing layer (z/OS Connect API requester, Liberty proxy, or an external API gateway) in front of both backends with a route table keyed by **operation** (HTTP method + path template, i.e. the `operationId`), not by path alone. Several operations share a path (`GET`/`PUT`/`DELETE /customers/{customerId}`, `GET`/`PUT /ims/customers/{customerId}`), and their reads move in Phase 2 while their writes move in Phase 3. The frontend's `baseUrl` in `src/frontend/config.js` stays the same.
 - **Build.** Add a Gradle/Maven build for the new module to CI, outside the DBB `Cobol`/`PLI` tasks. Don't touch `zOSConnect` or `VanillaFrontend` yet.
-- **Testing.** Set up the PR pipeline from [CI pipeline](#ci-pipeline) (unit, contract, Db2-container, golden replay, JaCoCo gate). Add unit tests for the existing IMS Java classes before refactoring them. Run a rollback drill: flip one read route to Java and back under load.
+- **Testing.** Set up the PR pipeline from [CI pipeline](#ci-pipeline) (unit, contract, Db2-container, golden replay, JaCoCo gate). Add unit tests for the existing IMS Java classes before refactoring them. Run a rollback drill: flip one read operation to Java and back under load. Test that the `GET`, `PUT`, and `DELETE` operations on a shared path (CICS and IMS customer paths) can be routed independently.
 
 ### Exit criteria
 
 - **Test gate:** the Java service serves all 17 operations in *delegate* mode and passes the full golden replay and contract suite (byte-for-byte after JSON normalisation). The PR pipeline is green and enforced on `main`.
-- The gateway can send any single path to Java or z/OS Connect with a config change, and can roll back without a redeploy.
+- The gateway can send any single operation (method + path) to Java or z/OS Connect with a config change, with routing tests showing that a shared path's reads and writes move independently,, and can roll back without a redeploy.
 - The IMS Java project builds and tests from one Gradle build, and `InsertHist` failures are visible.
 - The frontend test suite under `tests/` passes against the gateway with no frontend change.
 
@@ -287,8 +287,11 @@ Taken from the catalog above. In short: every CICS business program is Db2-only,
 | `DELACC` | `AccountService.delete` | **Needs a new operation** (`DELETE /accounts/{accountId}`) |
 | `DBCRFUN` | `PaymentService.debitCredit` | Backs `POST /accounts/{accountId}/deposit`; keep the existing insufficient-funds and account-type rules |
 | `XFRFUN` | `TransferService.transfer` | **Needs a new operation** (e.g. `POST /transfers`); replace `-911` retry/`DELAY` with optimistic locking or `SELECT ... FOR UPDATE` |
+| `IBSCUDAT` (IMS) | `ImsCustomerService.update` | Backs `PUT /ims/customers/{customerId}`. Data store follows the IMS Open Decision: IMS Universal Drivers (DL/I or JDBC) against the `CUSTOMER` DBD if IMS stays, or Db2 tables after the Phase 5 move |
+| `IBTRAN` (IMS) | `ImsPaymentService.deposit` | Backs `POST /ims/accounts/{customerId}/{accountId}/deposit`. Writes the DL/I `ACCOUNT`/`HISTORY` segments and `IMSBANK.HISTORY` in one unit of work (JTA/XA, or a single store once history is consolidated); replaces the JNI call to `InsertHist` |
 | `CRDTAGY1`–`5` | `CreditAgencyClient` (×5) | Outbound HTTP clients behind one interface; the simulator becomes a test stub |
 
+- **IMS writes:** `IBSCUDAT` and `IBTRAN` stay deployed and routed to z/OS Connect until their Java replacements pass write-shadow parity (including DL/I segment state, not just Db2 rows). Only then do their routes move, and only then can Phase 5 remove `src/base/ims/cobol/`.
 - **Transactions:** Spring `@Transactional` over a single Db2 datasource covers every program above, because they are all Db2-only. JTA/XA is needed only if a flow is later made to span Db2 and IMS or VSAM. The one case today is the IMS deposit (`IBTRAN`: DL/I plus `IMSBANK.HISTORY`).
 - **Frontend:** wire `createAccount`, `updateAccount`, and `deleteAccount` in `src/frontend/js/api.js` to the new operations, and add a transfer page. Until this ships, the JS frontend does not replace `BNK1CAC`, `BNK1UAC`, `BNK1DAC`, or `BNK1TFN`.
 - **Testing:** for each write operation, golden replay of the resulting Db2 rows, write-shadow testing (replay against a pre-prod Db2 copy, see [Test layers](#test-layers)), concurrency tests on the same account, fault injection for credit-agency timeouts and Db2 `-911` deadlocks, and Playwright journeys for the new account and transfer screens. Run the full regression suite after each operation moves, because reads now depend on rows written by Java.
@@ -297,8 +300,8 @@ Taken from the catalog above. In short: every CICS business program is Db2-only,
 
 ### Exit criteria
 
-- **Test gate:** all mutating API operations, old and new, are served by Java and pass parity tests on the resulting Db2 state (rows in `CUSTOMER`, `ACCOUNT`, `PROCTRAN`, `CONTROL`) over a full month-end cycle.
-- Concurrency tests show no lost updates on balance changes (`DBCRFUN`, `XFRFUN`): the sum of balances is unchanged after N parallel transfers.
+- **Test gate:** all mutating API operations, old and new, are served by Java and pass parity tests on the resulting data state (Db2 rows in `CUSTOMER`, `ACCOUNT`, `PROCTRAN`, `CONTROL`, `IMSBANK.HISTORY`, plus the IMS `CUSTOMER`/`ACCOUNT`/`HISTORY` segments for `IBSCUDAT`/`IBTRAN`) over a full month-end cycle.
+- Concurrency tests show no lost updates on balance changes: the sum of balances is unchanged after N parallel transfers (`XFRFUN`), and after N parallel debits on one account (`DBCRFUN`, `IBTRAN`) the final balance equals the start balance minus the accepted debits, with one `PROCTRAN`/`HISTORY` row per accepted debit.
 - No 3270 transaction is in use, and the `BNK*` programs and BMS maps are removed from the CSD.
 - `BANKDATA` and `ABNDPROC` have no remaining callers.
 
@@ -338,7 +341,7 @@ Taken from the catalog above. In short: every CICS business program is Db2-only,
 
 ### Exit criteria
 
-- 100% of API traffic and all batch work run on Java for an agreed stabilisation period.
+- 100% of API traffic and all batch work run on Java for an agreed stabilisation period. This includes the IMS operations (`IBGCUDAT`, `IBACSUM`, `IBSCUDAT`, `IBTRAN`); IMS source is removed only after their Java replacements have passed parity.
 - No COBOL, PL/I, BMS, copybook, DBD, or PSB sources remain (or only the ones Open Decisions chose to keep), and `dbb-app.yaml` has no COBOL/PLI tasks.
 - **Test gate:** data reconciliation reports from the final move are signed off; the full regression suite passes with the legacy regions stopped; the legacy regions/datasets are scheduled for shutdown.
 
