@@ -6,6 +6,7 @@
 
 plugins {
     id 'java-library'
+    id 'jacoco'
 }
 
 group = 'com.ibm.bankofz'
@@ -49,5 +50,14 @@ test {
         events 'failed'
         showStandardStreams = System.getProperty('showOutput') != null
         exceptionFormat 'full'
+    }
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = true
+        csv.required = true
+        html.required = true
     }
 }
