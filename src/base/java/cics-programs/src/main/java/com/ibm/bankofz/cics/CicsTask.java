@@ -16,6 +16,16 @@ public interface CicsTask {
         throw new UnsupportedOperationException("LINK " + program);
     }
 
+    /** LINK with RESP(...): false instead of an exception when the response is not NORMAL. */
+    default boolean tryLink(String program, byte[] commarea) {
+        try {
+            link(program, commarea);
+            return true;
+        } catch (IllegalStateException e) {
+            return false;
+        }
+    }
+
     /** EXEC CICS ENQ RESOURCE(name) LENGTH(name.length()); false when RESP is not NORMAL. */
     default boolean enq(String name) {
         throw new UnsupportedOperationException("ENQ " + name);

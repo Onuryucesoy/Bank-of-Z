@@ -27,7 +27,7 @@ public final class InquireAccountsForCustomer {
     static final int ENTRY = 98;
     static final int MAX = 20;
     private static final DateTimeFormatter DDMMYYYY = DateTimeFormatter.ofPattern("ddMMyyyy");
-    private static final FieldSpec[] INQCUST_NUMERIC = {Inqcustz.INQCUST_CUSTNO, Inqcustz.INQCUST_DOB_DD,
+    static final FieldSpec[] INQCUST_NUMERIC = {Inqcustz.INQCUST_CUSTNO, Inqcustz.INQCUST_DOB_DD,
         Inqcustz.INQCUST_DOB_MM, Inqcustz.INQCUST_DOB_YYYY, Inqcustz.INQCUST_CREATED_DD,
         Inqcustz.INQCUST_CREATED_MM, Inqcustz.INQCUST_CREATED_YYYY, Inqcustz.INQCUST_CREDIT_SCORE,
         Inqcustz.INQCUST_CS_REVIEW_DD, Inqcustz.INQCUST_CS_REVIEW_MM, Inqcustz.INQCUST_CS_REVIEW_YYYY};
