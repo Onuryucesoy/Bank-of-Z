@@ -16,6 +16,16 @@ public interface CicsTask {
         throw new UnsupportedOperationException("LINK " + program);
     }
 
+    /** EXEC CICS ENQ RESOURCE(name) LENGTH(name.length()); false when RESP is not NORMAL. */
+    default boolean enq(String name) {
+        throw new UnsupportedOperationException("ENQ " + name);
+    }
+
+    /** EXEC CICS DEQ RESOURCE(name) LENGTH(name.length()); false when RESP is not NORMAL. */
+    default boolean deq(String name) {
+        throw new UnsupportedOperationException("DEQ " + name);
+    }
+
     /** EXEC CICS SYNCPOINT ROLLBACK; the callers abend HROL if it fails. */
     default void rollback() {
         throw new UnsupportedOperationException("SYNCPOINT ROLLBACK");
@@ -40,6 +50,26 @@ public interface CicsTask {
                     new com.ibm.cics.server.Program(program).link(commarea);
                 } catch (com.ibm.cics.server.CicsConditionException e) {
                     throw new IllegalStateException("LINK " + program, e);
+                }
+            }
+
+            @Override
+            public boolean enq(String name) {
+                try {
+                    new com.ibm.cics.server.NameResource(name).enqueue();
+                    return true;
+                } catch (com.ibm.cics.server.CicsConditionException e) {
+                    return false;
+                }
+            }
+
+            @Override
+            public boolean deq(String name) {
+                try {
+                    new com.ibm.cics.server.NameResource(name).dequeue();
+                    return true;
+                } catch (com.ibm.cics.server.CicsConditionException e) {
+                    return false;
                 }
             }
 
