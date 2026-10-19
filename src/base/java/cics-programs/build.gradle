@@ -1,0 +1,15 @@
+description = 'Phase 3: JCICS ports of the CICS COBOL programs (COMMAREA/container layouts via copybook-bridge)'
+
+dependencies {
+    implementation project(':copybook-bridge')
+    compileOnly 'com.ibm.cics:com.ibm.cics.server:2.100.0-6.2'
+    testImplementation 'com.ibm.cics:com.ibm.cics.server:2.100.0-6.2'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs << '-Xlint:-classfile'
+}
+
+jar {
+    from(project(':copybook-bridge').sourceSets.main.output)
+}

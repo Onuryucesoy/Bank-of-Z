@@ -4,4 +4,4 @@
  */
 rootProject.name = 'bankz-java'
 
-include 'copybook-bridge', 'parity-harness', 'cics-capture', 'batch-stmt', 'ims-loaders'
+include 'copybook-bridge', 'parity-harness', 'cics-capture', 'batch-stmt', 'ims-loaders', 'cics-programs'
