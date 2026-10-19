@@ -85,12 +85,34 @@ final class UdbDli implements Dli {
     }
 
     @Override
-    public String call(String function, String pcbName, byte[] ioArea, Ssa ssa) throws DLIException {
+    public String replace(String pcbName, String segment, byte[] ioArea) throws DLIException {
+        PCB pcb = pcb(pcbName);
+        try {
+            pcb.replace(ByteBuffer.wrap(ioArea), pcb.getSSAList(new WcazSSAMetadata(segment, List.<Byte>of(), List.of()) { }));
+            String st = pcb.getAIB().getDBPCB().getStatusCodeChars();
+            return st == null ? "  " : st;
+        } catch (DLIException e) {
+            return status(e);
+        }
+    }
+
+    private PCB pcb(String pcbName) throws DLIException {
         PCB pcb = pcbs.get(pcbName);
         if (pcb == null) {
             pcb = psb.getPCB(pcbName);
             pcbs.put(pcbName, pcb);
         }
+        return pcb;
+    }
+
+    private static String status(DLIException e) {
+        AIB aib = e.getAib();
+        return aib == null || aib.getDBPCB() == null ? "XX" : aib.getDBPCB().getStatusCodeChars();
+    }
+
+    @Override
+    public String call(String function, String pcbName, byte[] ioArea, Ssa ssa) throws DLIException {
+        PCB pcb = pcb(pcbName);
         WcazSSAQualification q = new WcazSSAQualification();
         q.setFieldName(ssa.field());
         q.setFieldValue(ssa.value());
@@ -106,8 +128,7 @@ final class UdbDli implements Dli {
             };
             return found ? "  " : pcb.getAIB().getDBPCB().getStatusCodeChars();
         } catch (DLIException e) {
-            AIB aib = e.getAib();
-            return aib == null || aib.getDBPCB() == null ? "XX" : aib.getDBPCB().getStatusCodeChars();
+            return status(e);
         }
     }
 }

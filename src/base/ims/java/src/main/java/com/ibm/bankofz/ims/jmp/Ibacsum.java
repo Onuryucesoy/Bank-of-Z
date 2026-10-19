@@ -41,18 +41,10 @@ public final class Ibacsum {
 
     public void run() throws Exception {
         sysout.println("IBACSUM ENTERS.... 7/30 3:02 AM ");
-        while (true) {
-            String tpstat = dli.getUniqueMessage(input);
-            if (tpstat.equals("  ") || tpstat.equals("CF")) {
-                byte[] out = getAccountSummary();
-                insertIo(out);
-                dli.syncpoint();
-            } else if (tpstat.equals("QC")) {
-                return;
-            } else {
-                sysout.println("GU FROM IOPCB FAILED WITH STATUS CODE: " + tpstat);
-            }
-        }
+        Mpp.loop(dli, sysout, input, () -> {
+            byte[] out = getAccountSummary();
+            return Mpp.llzz(out, FIXED + SUMMARY * (out[36] - (byte) 0xF0));
+        });
     }
 
     byte[] getAccountSummary() throws Exception {
@@ -105,17 +97,5 @@ public final class Ibacsum {
             return total < 1 ? none : null;
         }
         return BAD_STATUS + dbstat;
-    }
-
-    private void insertIo(byte[] out) throws Exception {
-        int total = out[36] - (byte) 0xF0;
-        int ll = FIXED + SUMMARY * total;
-        Binary.encode(BigDecimal.valueOf(ll), out, 0, 4, 0, false, false);
-        out[2] = 0;
-        out[3] = 0;
-        String tpstat = dli.insertMessage(out, ll);
-        if (!tpstat.equals("  ")) {
-            sysout.println("INSERT TO IOPCB FAILED WITH STATUS CODE: " + tpstat);
-        }
     }
 }

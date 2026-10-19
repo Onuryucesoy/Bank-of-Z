@@ -17,6 +17,8 @@ final class FakeDli implements Dli {
     final List<Ssa> ssas = new ArrayList<>();
     int syncpoints;
     private final Map<String, Integer> position = new HashMap<>();
+    private final Map<String, Boolean> held = new HashMap<>();
+    final Map<String, String> forcedReplace = new HashMap<>();
 
     FakeDli segment(String pcb, byte[] seg) {
         db.computeIfAbsent(pcb, k -> new ArrayList<>()).add(seg);
@@ -68,9 +70,23 @@ final class FakeDli implements Dli {
             if (Arrays.equals(s, ssa.fieldOffset(), ssa.fieldOffset() + key.length, key, 0, key.length)) {
                 System.arraycopy(s, 0, ioArea, 0, s.length);
                 position.put(pcb, i);
+                held.put(pcb, function.startsWith("GH"));
                 return "  ";
             }
         }
         return "GE";
+    }
+
+    @Override
+    public String replace(String pcb, String segment, byte[] ioArea) {
+        if (forcedReplace.containsKey(pcb)) {
+            return forcedReplace.get(pcb);
+        }
+        if (!held.getOrDefault(pcb, false)) {
+            return "DJ";
+        }
+        db.get(pcb).set(position.get(pcb), ioArea.clone());
+        held.put(pcb, false);
+        return "  ";
     }
 }

@@ -16,4 +16,7 @@ public interface Dli {
 
     /** A DB call (GU, GHU, GN, GHN, ...) against the PCB named {@code pcb} with one qualified SSA. */
     String call(String function, String pcb, byte[] ioArea, Ssa ssa) throws Exception;
+
+    /** REPL of the segment last retrieved with a hold call on {@code pcb}. */
+    String replace(String pcb, String segment, byte[] ioArea) throws Exception;
 }
