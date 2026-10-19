@@ -83,10 +83,10 @@ public final class Customer extends CobolRecord {
             CUSTOMER_CS_REVIEW_DAY,
             CUSTOMER_CS_REVIEW_MONTH,
             CUSTOMER_CS_REVIEW_YEAR));
-    private static final byte[][] V_CUSTOMER_EYECATCHER_CUSTOMER_EYECATCHER_VALUE = {Hex.parse("C3E4E2E3")};
-    private static final byte[][] V_CUSTOMER_STATUS_CUSTOMER_STATUS_ACTIVE = {Hex.parse("C1C3E3C9E5C540404040")};
+    private static final byte[][] V_CUSTOMER_EYECATCHER_CUSTOMER_EYECATCHER_VALUE = {Hex.parse("C3E4E2E3")}; // pragma: allowlist secret
+    private static final byte[][] V_CUSTOMER_STATUS_CUSTOMER_STATUS_ACTIVE = {Hex.parse("C1C3E3C9E5C540404040")}; // pragma: allowlist secret
     private static final byte[][] V_CUSTOMER_STATUS_CUSTOMER_STATUS_INACTIVE = {Hex.parse("C9D5C1C3E3C9E5C54040")}; // pragma: allowlist secret
-    private static final byte[][] V_CUSTOMER_STATUS_CUSTOMER_STATUS_SUSPENDED = {Hex.parse("E2E4E2D7C5D5C4C5C440")};
+    private static final byte[][] V_CUSTOMER_STATUS_CUSTOMER_STATUS_SUSPENDED = {Hex.parse("E2E4E2D7C5D5C4C5C440")}; // pragma: allowlist secret
 
     public Customer() {
         this(new byte[LENGTH], 0);

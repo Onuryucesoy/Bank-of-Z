@@ -287,7 +287,7 @@ final class Emitter {
                         out.append(i == 0 ? "" : ", ").append("Hex.parse(\"").append(Hex.of(image(it, r[0])))
                                 .append("\")");
                     }
-                    out.append("};\n");
+                    out.append("}; // pragma: allowlist secret\n");
                 } else {
                     out.append("    private static final BigDecimal[][] ").append(name).append(" = {");
                     for (int i = 0; i < cond.ranges().size(); i++) {
@@ -337,7 +337,8 @@ final class Emitter {
             }
             String c = constants.get(it);
             if (isTextual(it)) {
-                lines.add("setRaw(" + c + ", Hex.parse(\"" + Hex.of(image(it, it.values.get(0))) + "\"));");
+                lines.add("setRaw(" + c + ", Hex.parse(\"" + Hex.of(image(it, it.values.get(0)))
+                        + "\")); // pragma: allowlist secret");
             } else {
                 lines.add("setDecimal(" + c + ", new BigDecimal(\"" + number(it, it.values.get(0)) + "\"), false);");
             }

@@ -73,11 +73,11 @@ public final class Inqtrand extends CobolRecord {
             INQTRAND_TRAN_TYPE,
             INQTRAND_TRAN_DESC,
             INQTRAND_TRAN_AMOUNT));
-    private static final byte[][] V_INQTRAND_EYE_INQTRAND_EYE_VALID = {Hex.parse("C9E3D9C4")};
-    private static final byte[][] V_INQTRAND_SUCCESS_INQTRAND_SUCCESS_TRUE = {Hex.parse("E8")};
-    private static final byte[][] V_INQTRAND_SUCCESS_INQTRAND_SUCCESS_FALSE = {Hex.parse("D5")};
-    private static final byte[][] V_INQTRAND_FOUND_INQTRAND_FOUND_TRUE = {Hex.parse("E8")};
-    private static final byte[][] V_INQTRAND_FOUND_INQTRAND_FOUND_FALSE = {Hex.parse("D5")};
+    private static final byte[][] V_INQTRAND_EYE_INQTRAND_EYE_VALID = {Hex.parse("C9E3D9C4")}; // pragma: allowlist secret
+    private static final byte[][] V_INQTRAND_SUCCESS_INQTRAND_SUCCESS_TRUE = {Hex.parse("E8")}; // pragma: allowlist secret
+    private static final byte[][] V_INQTRAND_SUCCESS_INQTRAND_SUCCESS_FALSE = {Hex.parse("D5")}; // pragma: allowlist secret
+    private static final byte[][] V_INQTRAND_FOUND_INQTRAND_FOUND_TRUE = {Hex.parse("E8")}; // pragma: allowlist secret
+    private static final byte[][] V_INQTRAND_FOUND_INQTRAND_FOUND_FALSE = {Hex.parse("D5")}; // pragma: allowlist secret
 
     public Inqtrand() {
         this(new byte[LENGTH], 0);

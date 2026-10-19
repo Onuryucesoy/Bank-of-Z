@@ -151,33 +151,33 @@ public final class Proctran extends CobolRecord {
             PROC_DESC_CRECUS_FILLER2,
             PROC_DESC_CRECUS_DOB_DD,
             PROC_TRAN_AMOUNT));
-    private static final byte[][] V_PROC_TRAN_EYE_CATCHER_PROC_TRAN_VALID = {Hex.parse("D7D9E3D9")};
-    private static final byte[][] V_PROC_TRAN_LOGICAL_DELETE_FLAG_PROC_TRAN_LOGICALLY_DELETED = {Hex.parse("FF")};
-    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_CHEQUE_ACKNOWLEDGED = {Hex.parse("C3C8C1")};
-    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_CHEQUE_FAILURE = {Hex.parse("C3C8C6")};
-    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_CHEQUE_PAID_IN = {Hex.parse("C3C8C9")};
-    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_CHEQUE_PAID_OUT = {Hex.parse("C3C8D6")};
-    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_CREDIT = {Hex.parse("C3D9C5")};
-    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_DEBIT = {Hex.parse("C4C5C2")};
-    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_WEB_CREATE_ACCOUNT = {Hex.parse("C9C3C1")};
-    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_WEB_CREATE_CUSTOMER = {Hex.parse("C9C3C3")};
-    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_WEB_DELETE_ACCOUNT = {Hex.parse("C9C4C1")};
-    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_WEB_DELETE_CUSTOMER = {Hex.parse("C9C4C3")};
-    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_BRANCH_CREATE_ACCOUNT = {Hex.parse("D6C3C1")};
-    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_BRANCH_CREATE_CUSTOMER = {Hex.parse("D6C3C3")};
-    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_BRANCH_DELETE_ACCOUNT = {Hex.parse("D6C4C1")};
-    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_BRANCH_DELETE_CUSTOMER = {Hex.parse("D6C4C3")};
-    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_CREATE_SODD = {Hex.parse("D6C3E2")};
-    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_PAYMENT_CREDIT = {Hex.parse("D7C3D9")};
-    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_PAYMENT_DEBIT = {Hex.parse("D7C4D9")};
-    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_TRANSFER = {Hex.parse("E3C6D9")};
-    private static final byte[][] V_PROC_TRAN_DESC_XFR_HEADER_PROC_TRAN_DESC_XFR_FLAG = {Hex.parse("E3D9C1D5E2C6C5D9404040404040404040404040404040404040")};
-    private static final byte[][] V_PROC_DESC_DELACC_FOOTER_PROC_DESC_DELACC_FLAG = {Hex.parse("C4C5D3C5E3C5")};
-    private static final byte[][] V_PROC_DESC_CREACC_FOOTER_PROC_DESC_CREACC_FLAG = {Hex.parse("C3D9C5C1E3C5")};
-    private static final byte[][] V_PROC_DESC_DELCUS_FILLER_PROC_DESC_DELCUS_FILLER_SET = {Hex.parse("60")};
-    private static final byte[][] V_PROC_DESC_DELCUS_FILLER2_PROC_DESC_DELCUS_FILLER2_SET = {Hex.parse("60")};
-    private static final byte[][] V_PROC_DESC_CRECUS_FILLER_PROC_DESC_CRECUS_FILLER_SET = {Hex.parse("60")};
-    private static final byte[][] V_PROC_DESC_CRECUS_FILLER2_PROC_DESC_CRECUS_FILLER2_SET = {Hex.parse("60")};
+    private static final byte[][] V_PROC_TRAN_EYE_CATCHER_PROC_TRAN_VALID = {Hex.parse("D7D9E3D9")}; // pragma: allowlist secret
+    private static final byte[][] V_PROC_TRAN_LOGICAL_DELETE_FLAG_PROC_TRAN_LOGICALLY_DELETED = {Hex.parse("FF")}; // pragma: allowlist secret
+    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_CHEQUE_ACKNOWLEDGED = {Hex.parse("C3C8C1")}; // pragma: allowlist secret
+    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_CHEQUE_FAILURE = {Hex.parse("C3C8C6")}; // pragma: allowlist secret
+    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_CHEQUE_PAID_IN = {Hex.parse("C3C8C9")}; // pragma: allowlist secret
+    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_CHEQUE_PAID_OUT = {Hex.parse("C3C8D6")}; // pragma: allowlist secret
+    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_CREDIT = {Hex.parse("C3D9C5")}; // pragma: allowlist secret
+    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_DEBIT = {Hex.parse("C4C5C2")}; // pragma: allowlist secret
+    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_WEB_CREATE_ACCOUNT = {Hex.parse("C9C3C1")}; // pragma: allowlist secret
+    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_WEB_CREATE_CUSTOMER = {Hex.parse("C9C3C3")}; // pragma: allowlist secret
+    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_WEB_DELETE_ACCOUNT = {Hex.parse("C9C4C1")}; // pragma: allowlist secret
+    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_WEB_DELETE_CUSTOMER = {Hex.parse("C9C4C3")}; // pragma: allowlist secret
+    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_BRANCH_CREATE_ACCOUNT = {Hex.parse("D6C3C1")}; // pragma: allowlist secret
+    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_BRANCH_CREATE_CUSTOMER = {Hex.parse("D6C3C3")}; // pragma: allowlist secret
+    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_BRANCH_DELETE_ACCOUNT = {Hex.parse("D6C4C1")}; // pragma: allowlist secret
+    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_BRANCH_DELETE_CUSTOMER = {Hex.parse("D6C4C3")}; // pragma: allowlist secret
+    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_CREATE_SODD = {Hex.parse("D6C3E2")}; // pragma: allowlist secret
+    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_PAYMENT_CREDIT = {Hex.parse("D7C3D9")}; // pragma: allowlist secret
+    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_PAYMENT_DEBIT = {Hex.parse("D7C4D9")}; // pragma: allowlist secret
+    private static final byte[][] V_PROC_TRAN_TYPE_PROC_TY_TRANSFER = {Hex.parse("E3C6D9")}; // pragma: allowlist secret
+    private static final byte[][] V_PROC_TRAN_DESC_XFR_HEADER_PROC_TRAN_DESC_XFR_FLAG = {Hex.parse("E3D9C1D5E2C6C5D9404040404040404040404040404040404040")}; // pragma: allowlist secret
+    private static final byte[][] V_PROC_DESC_DELACC_FOOTER_PROC_DESC_DELACC_FLAG = {Hex.parse("C4C5D3C5E3C5")}; // pragma: allowlist secret
+    private static final byte[][] V_PROC_DESC_CREACC_FOOTER_PROC_DESC_CREACC_FLAG = {Hex.parse("C3D9C5C1E3C5")}; // pragma: allowlist secret
+    private static final byte[][] V_PROC_DESC_DELCUS_FILLER_PROC_DESC_DELCUS_FILLER_SET = {Hex.parse("60")}; // pragma: allowlist secret
+    private static final byte[][] V_PROC_DESC_DELCUS_FILLER2_PROC_DESC_DELCUS_FILLER2_SET = {Hex.parse("60")}; // pragma: allowlist secret
+    private static final byte[][] V_PROC_DESC_CRECUS_FILLER_PROC_DESC_CRECUS_FILLER_SET = {Hex.parse("60")}; // pragma: allowlist secret
+    private static final byte[][] V_PROC_DESC_CRECUS_FILLER2_PROC_DESC_CRECUS_FILLER2_SET = {Hex.parse("60")}; // pragma: allowlist secret
 
     public Proctran() {
         this(new byte[LENGTH], 0);

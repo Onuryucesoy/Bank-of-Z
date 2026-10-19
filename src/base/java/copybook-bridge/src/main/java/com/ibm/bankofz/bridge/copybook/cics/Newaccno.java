@@ -31,9 +31,9 @@ public final class Newaccno extends CobolRecord {
             ACCOUNT_NUMBER,
             NEWACCNO_SUCCESS,
             NEWACCNO_FAIL_CODE));
-    private static final byte[][] V_NEWACCNO_FUNCTION_NEWACCNO_FUNCTION_GETNEW = {Hex.parse("C7")};
-    private static final byte[][] V_NEWACCNO_FUNCTION_NEWACCNO_FUNCTION_ROLLBACK = {Hex.parse("D9")};
-    private static final byte[][] V_NEWACCNO_FUNCTION_NEWACCNO_FUNCTION_CURRENT = {Hex.parse("C3")};
+    private static final byte[][] V_NEWACCNO_FUNCTION_NEWACCNO_FUNCTION_GETNEW = {Hex.parse("C7")}; // pragma: allowlist secret
+    private static final byte[][] V_NEWACCNO_FUNCTION_NEWACCNO_FUNCTION_ROLLBACK = {Hex.parse("D9")}; // pragma: allowlist secret
+    private static final byte[][] V_NEWACCNO_FUNCTION_NEWACCNO_FUNCTION_CURRENT = {Hex.parse("C3")}; // pragma: allowlist secret
 
     public Newaccno() {
         this(new byte[LENGTH], 0);

@@ -57,8 +57,8 @@ public final class Acctctrl extends CobolRecord {
             FILLER_6,
             FILLER_7,
             FILLER_8));
-    private static final byte[][] V_ACCOUNT_CONTROL_EYE_CATCHER_ACCOUNT_CONTROL_EYECATCHER_V = {Hex.parse("C3E3D9D3")};
-    private static final byte[][] V_ACCOUNT_CONTROL_SUCCESS_FLAG_ACCOUNT_CONTROL_SUCCESS = {Hex.parse("E8")};
+    private static final byte[][] V_ACCOUNT_CONTROL_EYE_CATCHER_ACCOUNT_CONTROL_EYECATCHER_V = {Hex.parse("C3E3D9D3")}; // pragma: allowlist secret
+    private static final byte[][] V_ACCOUNT_CONTROL_SUCCESS_FLAG_ACCOUNT_CONTROL_SUCCESS = {Hex.parse("E8")}; // pragma: allowlist secret
 
     public Acctctrl() {
         this(new byte[LENGTH], 0);

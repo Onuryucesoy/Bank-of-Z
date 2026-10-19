@@ -51,8 +51,8 @@ public final class Custctrl extends CobolRecord {
             FILLER_3,
             FILLER_4,
             FILLER_5));
-    private static final byte[][] V_CUSTOMER_CONTROL_EYECATCHER_CUSTOMER_CONTROL_EYECATCHER_V = {Hex.parse("C3E3D9D3")};
-    private static final byte[][] V_CUSTOMER_CONTROL_SUCCESS_FLAG_CUSTOMER_CONTROL_SUCCESS = {Hex.parse("E8")};
+    private static final byte[][] V_CUSTOMER_CONTROL_EYECATCHER_CUSTOMER_CONTROL_EYECATCHER_V = {Hex.parse("C3E3D9D3")}; // pragma: allowlist secret
+    private static final byte[][] V_CUSTOMER_CONTROL_SUCCESS_FLAG_CUSTOMER_CONTROL_SUCCESS = {Hex.parse("E8")}; // pragma: allowlist secret
 
     public Custctrl() {
         this(new byte[LENGTH], 0);

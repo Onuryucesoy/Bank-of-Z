@@ -31,9 +31,9 @@ public final class Newcusno extends CobolRecord {
             CUSTOMER_NUMBER,
             NEWCUSNO_SUCCESS,
             NEWCUSNO_FAIL_CODE));
-    private static final byte[][] V_NEWCUSNO_FUNCTION_NEWCUSNO_FUNCTION_GETNEW = {Hex.parse("C7")};
-    private static final byte[][] V_NEWCUSNO_FUNCTION_NEWCUSNO_FUNCTION_ROLLBACK = {Hex.parse("D9")};
-    private static final byte[][] V_NEWCUSNO_FUNCTION_NEWCUSNO_FUNCTION_CURRENT = {Hex.parse("C3")};
+    private static final byte[][] V_NEWCUSNO_FUNCTION_NEWCUSNO_FUNCTION_GETNEW = {Hex.parse("C7")}; // pragma: allowlist secret
+    private static final byte[][] V_NEWCUSNO_FUNCTION_NEWCUSNO_FUNCTION_ROLLBACK = {Hex.parse("D9")}; // pragma: allowlist secret
+    private static final byte[][] V_NEWCUSNO_FUNCTION_NEWCUSNO_FUNCTION_CURRENT = {Hex.parse("C3")}; // pragma: allowlist secret
 
     public Newcusno() {
         this(new byte[LENGTH], 0);

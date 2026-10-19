@@ -75,7 +75,7 @@ public final class Account extends CobolRecord {
             ACCOUNT_NEXT_STMT_YEAR,
             ACCOUNT_AVAILABLE_BALANCE,
             ACCOUNT_ACTUAL_BALANCE));
-    private static final byte[][] V_ACCOUNT_EYE_CATCHER_ACCOUNT_EYECATCHER_VALUE = {Hex.parse("C1C3C3E3")};
+    private static final byte[][] V_ACCOUNT_EYE_CATCHER_ACCOUNT_EYECATCHER_VALUE = {Hex.parse("C1C3C3E3")}; // pragma: allowlist secret
 
     public Account() {
         this(new byte[LENGTH], 0);

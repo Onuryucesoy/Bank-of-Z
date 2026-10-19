@@ -79,12 +79,12 @@ public final class Inqtranl extends CobolRecord {
             INQTRANL_TRAN_TYPE,
             INQTRANL_TRAN_DESC,
             INQTRANL_TRAN_AMOUNT));
-    private static final byte[][] V_INQTRANL_EYE_INQTRANL_EYE_VALID = {Hex.parse("C9E3D9D3")};
+    private static final byte[][] V_INQTRANL_EYE_INQTRANL_EYE_VALID = {Hex.parse("C9E3D9D3")}; // pragma: allowlist secret
     private static final BigDecimal[][] V_INQTRANL_FROM_DATE_INQTRANL_NO_FROM_DATE = {{new BigDecimal("0"), new BigDecimal("0")}};
     private static final BigDecimal[][] V_INQTRANL_TO_DATE_INQTRANL_NO_TO_DATE = {{new BigDecimal("99999999"), new BigDecimal("99999999")}};
     private static final BigDecimal[][] V_INQTRANL_LIMIT_INQTRANL_DEFAULT_LIMIT = {{new BigDecimal("50"), new BigDecimal("50")}};
-    private static final byte[][] V_INQTRANL_SUCCESS_INQTRANL_SUCCESS_TRUE = {Hex.parse("E8")};
-    private static final byte[][] V_INQTRANL_SUCCESS_INQTRANL_SUCCESS_FALSE = {Hex.parse("D5")};
+    private static final byte[][] V_INQTRANL_SUCCESS_INQTRANL_SUCCESS_TRUE = {Hex.parse("E8")}; // pragma: allowlist secret
+    private static final byte[][] V_INQTRANL_SUCCESS_INQTRANL_SUCCESS_FALSE = {Hex.parse("D5")}; // pragma: allowlist secret
 
     public Inqtranl() {
         this(new byte[LENGTH], 0);

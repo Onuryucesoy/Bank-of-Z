@@ -151,13 +151,13 @@ public final class Procisrt extends CobolRecord {
             PROCISRT_CREACC_N_STMNT_DD,
             PROCISRT_CREACC_TYPE,
             PROCISRT_CREACC_CUSTNO));
-    private static final byte[][] V_PROCISRT_FUNCTION_PROCISRT_DEBIT = {Hex.parse("F1")};
-    private static final byte[][] V_PROCISRT_FUNCTION_PROCISRT_CREDIT = {Hex.parse("F2")};
-    private static final byte[][] V_PROCISRT_FUNCTION_PROCISRT_XFR_LOCAL = {Hex.parse("F3")};
-    private static final byte[][] V_PROCISRT_FUNCTION_PROCISRT_DELETE_CUSTOMER = {Hex.parse("F4")};
-    private static final byte[][] V_PROCISRT_FUNCTION_PROCISRT_CREATE_CUSTOMER = {Hex.parse("F5")};
-    private static final byte[][] V_PROCISRT_FUNCTION_PROCISRT_DELETE_ACCOUNT = {Hex.parse("F6")};
-    private static final byte[][] V_PROCISRT_FUNCTION_PROCISRT_CREATE_ACCOUNT = {Hex.parse("F7")};
+    private static final byte[][] V_PROCISRT_FUNCTION_PROCISRT_DEBIT = {Hex.parse("F1")}; // pragma: allowlist secret
+    private static final byte[][] V_PROCISRT_FUNCTION_PROCISRT_CREDIT = {Hex.parse("F2")}; // pragma: allowlist secret
+    private static final byte[][] V_PROCISRT_FUNCTION_PROCISRT_XFR_LOCAL = {Hex.parse("F3")}; // pragma: allowlist secret
+    private static final byte[][] V_PROCISRT_FUNCTION_PROCISRT_DELETE_CUSTOMER = {Hex.parse("F4")}; // pragma: allowlist secret
+    private static final byte[][] V_PROCISRT_FUNCTION_PROCISRT_CREATE_CUSTOMER = {Hex.parse("F5")}; // pragma: allowlist secret
+    private static final byte[][] V_PROCISRT_FUNCTION_PROCISRT_DELETE_ACCOUNT = {Hex.parse("F6")}; // pragma: allowlist secret
+    private static final byte[][] V_PROCISRT_FUNCTION_PROCISRT_CREATE_ACCOUNT = {Hex.parse("F7")}; // pragma: allowlist secret
 
     public Procisrt() {
         this(new byte[LENGTH], 0);
