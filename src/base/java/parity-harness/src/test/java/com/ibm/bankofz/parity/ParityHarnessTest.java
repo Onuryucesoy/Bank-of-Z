@@ -351,4 +351,15 @@ class ParityHarnessTest {
                 unloads.toString(), out.toString()));
         assertEquals("3.00", Snapshot.read(out).tables().get("ACCOUNT/ACCOUNT").rows().get("5").get(2));
     }
+
+    @Test
+    void reportDiffBlocksOnNumbers(@TempDir Path dir) throws Exception {
+        assertEquals(0, ReportDiff.diff(List.of(" A 1.00"), List.of(" A 1.00")).exitCode());
+        assertEquals(4, ReportDiff.diff(List.of(" A 1.00"), List.of(" B 1.00")).exitCode());
+        assertEquals(8, ReportDiff.diff(List.of(" A 1.00"), List.of(" A 1.01")).exitCode());
+        assertEquals(4, ReportDiff.diff(List.of(" A"), List.of(" A", " B")).exitCode());
+        Path a = Files.writeString(dir.resolve("a"), "1X\n Y 2\n");
+        Path b = Files.writeString(dir.resolve("b"), "1X\n Y 3\n");
+        assertEquals(8, ParityGate.run("compare-reports", a.toString(), b.toString()));
+    }
 }

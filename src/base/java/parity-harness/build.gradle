@@ -11,3 +11,7 @@ jar {
     }
     from(project(':copybook-bridge').sourceSets.main.output)
 }
+
+dependencies {
+    compileOnly 'com.ibm.jzos:ibmjzos:2.4.11.3'
+}

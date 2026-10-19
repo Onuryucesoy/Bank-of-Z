@@ -39,6 +39,10 @@ public final class ParityGate {
                     need(args, 3);
                     return emit(Replayer.compare(Tape.read(Path.of(args[1])), Tape.read(Path.of(args[2]))));
                 }
+                case "compare-reports" -> {
+                    need(args, 3);
+                    return emit(ReportDiff.diff(ReportDiff.lines(args[1]), ReportDiff.lines(args[2])));
+                }
                 case "diff-snapshots" -> {
                     need(args, 3);
                     Set<String> ignore = args.length > 4 && args[3].equals("--ignore")
@@ -103,6 +107,7 @@ public final class ParityGate {
     private static int usage() {
         System.err.println("""
                 usage: ParityGate compare-tapes <legacy.tape> <candidate.tape>
+                       ParityGate compare-reports <legacy> <candidate>   (files or //DD:name)
                        ParityGate diff-snapshots <legacy.snap> <candidate.snap> [--ignore TABLE.COL,...]
                        ParityGate snapshot-db2 <jdbc-url> <out.snap> [TABLE ...]
                        ParityGate snapshot-ims <dbd-asm-dir> <unload-dir> <out.snap>""");
