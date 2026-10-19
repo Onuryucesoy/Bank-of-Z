@@ -1,0 +1,42 @@
+// Standalone Phase 1 module: Java DTOs derived from the Bank of Z copybooks.
+// Same toolchain as the existing nazare.jmp build (src/base/ims/java/build.gradle).
+plugins {
+    id 'java'
+}
+
+group = 'com.bankofz'
+version = '0.1.0-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.2')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    // In-memory database (DB2 compatibility mode) to execute the V001/V003 DDL.
+    testImplementation 'com.h2database:h2:2.2.224'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.compilerArgs += ['-Xlint:all', '-Werror']
+}
+
+def repoRoot = rootDir.toPath().resolve('../../..').normalize()
+
+test {
+    useJUnitPlatform()
+    // Tests read the canonical copybooks and DDL scripts straight from the repo.
+    systemProperty 'bankofz.repoRoot', repoRoot.toString()
+    inputs.dir(repoRoot.resolve('src/base/cics/copy').toFile())
+    inputs.dir(repoRoot.resolve('src/base/ims/copy').toFile())
+    inputs.dir(repoRoot.resolve('src/migration/db2').toFile())
+}
