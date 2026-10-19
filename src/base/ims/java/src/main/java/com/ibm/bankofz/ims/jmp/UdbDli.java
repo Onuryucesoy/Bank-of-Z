@@ -96,6 +96,23 @@ final class UdbDli implements Dli {
         }
     }
 
+    @Override
+    public String insert(String pcbName, String segment, byte[] ioArea) throws DLIException {
+        PCB pcb = pcb(pcbName);
+        try {
+            pcb.insert(ByteBuffer.wrap(ioArea), pcb.getSSAList(new WcazSSAMetadata(segment, List.<Byte>of(), List.of()) { }));
+            String st = pcb.getAIB().getDBPCB().getStatusCodeChars();
+            return st == null ? "  " : st;
+        } catch (DLIException e) {
+            return status(e);
+        }
+    }
+
+    @Override
+    public void rollback() throws Exception {
+        tran.rollback();
+    }
+
     private PCB pcb(String pcbName) throws DLIException {
         PCB pcb = pcbs.get(pcbName);
         if (pcb == null) {

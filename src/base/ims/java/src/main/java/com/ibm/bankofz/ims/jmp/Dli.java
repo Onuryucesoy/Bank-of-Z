@@ -19,4 +19,10 @@ public interface Dli {
 
     /** REPL of the segment last retrieved with a hold call on {@code pcb}. */
     String replace(String pcb, String segment, byte[] ioArea) throws Exception;
+
+    /** Unqualified ISRT of {@code segment} on {@code pcb}. */
+    String insert(String pcb, String segment, byte[] ioArea) throws Exception;
+
+    /** ROLB: back out database updates and uncommitted output since the last syncpoint. */
+    void rollback() throws Exception;
 }

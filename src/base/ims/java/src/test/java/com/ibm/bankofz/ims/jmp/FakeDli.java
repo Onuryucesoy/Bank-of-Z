@@ -19,6 +19,8 @@ final class FakeDli implements Dli {
     private final Map<String, Integer> position = new HashMap<>();
     private final Map<String, Boolean> held = new HashMap<>();
     final Map<String, String> forcedReplace = new HashMap<>();
+    final Map<String, String> forcedInsert = new HashMap<>();
+    int rollbacks;
 
     FakeDli segment(String pcb, byte[] seg) {
         db.computeIfAbsent(pcb, k -> new ArrayList<>()).add(seg);
@@ -88,5 +90,19 @@ final class FakeDli implements Dli {
         db.get(pcb).set(position.get(pcb), ioArea.clone());
         held.put(pcb, false);
         return "  ";
+    }
+
+    @Override
+    public String insert(String pcb, String segment, byte[] ioArea) {
+        if (forcedInsert.containsKey(pcb)) {
+            return forcedInsert.get(pcb);
+        }
+        db.computeIfAbsent(pcb, k -> new java.util.ArrayList<>()).add(ioArea.clone());
+        return "  ";
+    }
+
+    @Override
+    public void rollback() {
+        rollbacks++;
     }
 }

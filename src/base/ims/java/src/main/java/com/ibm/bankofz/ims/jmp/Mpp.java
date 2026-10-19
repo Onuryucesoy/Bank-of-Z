@@ -14,7 +14,13 @@ final class Mpp {
     }
 
     static void loop(Dli dli, PrintStream sysout, byte[] input, Handler handler) throws Exception {
-        while (true) {
+        loop(dli, sysout, input, handler, () -> false);
+    }
+
+    /** {@code stop} is the COBOL TERM-IO flag set inside the handler: checked before the next GU. */
+    static void loop(Dli dli, PrintStream sysout, byte[] input, Handler handler,
+                     java.util.function.BooleanSupplier stop) throws Exception {
+        while (!stop.getAsBoolean()) {
             String tpstat = dli.getUniqueMessage(input);
             if (tpstat.equals("  ") || tpstat.equals("CF")) {
                 byte[] out = handler.process();
