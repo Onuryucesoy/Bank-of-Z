@@ -1,0 +1,19 @@
+description = 'Phase 1: Java ports of the IMS LOAD* utilities (byte-exact segments, DL/I ISRT via com.ibm.ims:udb)'
+
+dependencies {
+    implementation project(':copybook-bridge')
+    compileOnly 'com.ibm.ims:udb:15.166'
+    compileOnly 'com.ibm.jzos:ibmjzos:2.4.11.3'
+    testImplementation project(':parity-harness')
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs << '-Xlint:-classfile'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.ibm.bankofz.loaders.LoadMain'
+    }
+    from(project(':copybook-bridge').sourceSets.main.output)
+}
