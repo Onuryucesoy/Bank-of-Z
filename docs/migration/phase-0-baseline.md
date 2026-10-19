@@ -69,8 +69,8 @@ that is not repeated per row.
 
 | Program | Input / output | Data access | CICS primitives |
 |---|---|---|---|
-| `CRECUST` | Commarea `CRECUST.cpy`; channel `CIPCREDCHANN` with containers `CIPA`…`CIPE` to the credit agencies | SQL: `SELECT`/`UPDATE CONTROL`, `INSERT CUSTOMER`, `INSERT PROCTRAN` | `ENQ`/`DEQ` on `BANKZCUST`+sortcode (customer-number serialisation), `RUN TRANSID('OCR1'..'OCR5') CHANNEL` (async API), `FETCH ANY`, `GET`/`PUT CONTAINER`, `DELAY` |
-| `CRDTAGY1`–`CRDTAGY5` | Channel `CIPCREDCHANN`, container with the customer data; returns a credit score | — | `GET`/`PUT CONTAINER`, `DELAY` (random 1–3 s simulated agency latency); started by `RUN TRANSID` from CRECUST |
+| `CRECUST` | Commarea `CRECUST.cpy`; channel `CIPCREDCHANN` with containers `CIPA`…`CIPE` to the credit agencies | SQL: `SELECT`/`UPDATE CONTROL`, `INSERT CUSTOMER`, `INSERT PROCTRAN` | `ENQ`/`DEQ` on `BANKZCUST`+sortcode (customer-number serialisation), `RUN TRANSID('OCR1'..'OCR5') CHANNEL … CHILD` (async API), `FETCH ANY`, `GET`/`PUT CONTAINER`, `DELAY` |
+| `CRDTAGY1`–`CRDTAGY5` | Channel `CIPCREDCHANN`, container with the customer data; returns a credit score | — | `GET`/`PUT CONTAINER`, `DELAY` (random 1–2 s simulated agency latency); started by `RUN TRANSID` from CRECUST |
 | `CREACC` | Commarea `CREACC.cpy` | SQL: `SELECT`/`UPDATE CONTROL` (`<sortcode>-ACCOUNT-LAST`, `-ACCOUNT-COUNT`), `INSERT ACCOUNT`, `INSERT PROCTRAN` | `ENQ`/`DEQ` on `BANKZACCT`+sortcode, `LINK INQCUST`, `LINK INQACCCU` |
 | `INQCUST` | Commarea `INQCUSTZ.cpy` | SQL: `SELECT CUSTOMER` (customer `0000000000` = random, `9999999999` = last via CONTROL) | — |
 | `UPDCUST` | Commarea `UPDCUST.cpy` | SQL: `SELECT`/`UPDATE CUSTOMER` | — |
