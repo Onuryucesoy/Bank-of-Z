@@ -1,0 +1,11 @@
+description = 'JCICS capture proxy: records COMMAREA/container bytes around a LINK to the legacy program'
+
+dependencies {
+    implementation project(':parity-harness')
+    compileOnly 'com.ibm.cics:com.ibm.cics.server:2.100.0-6.2'
+}
+
+// The JCICS jar references annotation classes that are only present inside CICS.
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs << '-Xlint:-classfile'
+}

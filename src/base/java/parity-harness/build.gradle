@@ -1,0 +1,13 @@
+description = 'Phase 0 parity harness: capture tapes, replay, Db2/IMS state snapshots and the migration gate'
+
+dependencies {
+    api project(':copybook-bridge')
+    testImplementation 'com.h2database:h2:2.2.224'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.ibm.bankofz.parity.ParityGate'
+    }
+    from(project(':copybook-bridge').sourceSets.main.output)
+}
