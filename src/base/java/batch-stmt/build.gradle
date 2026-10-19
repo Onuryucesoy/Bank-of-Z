@@ -1,0 +1,14 @@
+description = 'Phase 1: Java BNKSTMT monthly statement batch job (JZOS launcher, Db2 JDBC), parallel-run with BNKSTMT.pli'
+
+dependencies {
+    implementation project(':copybook-bridge')
+    compileOnly 'com.ibm.jzos:ibmjzos:2.4.11.3'
+    testImplementation 'com.h2database:h2:2.2.224'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.ibm.bankofz.batch.Bnkstmt'
+    }
+    from(project(':copybook-bridge').sourceSets.main.output)
+}
