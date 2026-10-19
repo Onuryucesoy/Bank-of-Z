@@ -113,7 +113,7 @@ public final class UpdateAccount {
         Text.encode("N", comm, Updacc.COMM_SUCCESS.offset(), 1, Ebcdic.CP037);
     }
 
-    private static String text(byte[] comm, FieldSpec f) {
+    static String text(byte[] comm, FieldSpec f) {
         return Text.decode(comm, f.offset(), f.length(), Ebcdic.CP037);
     }
 
@@ -121,7 +121,7 @@ public final class UpdateAccount {
         return ZonedDecimal.decode(comm, f.offset(), f.digits(), f.scale(), sign(f));
     }
 
-    private static void put(byte[] comm, FieldSpec f, BigDecimal v) {
+    static void put(byte[] comm, FieldSpec f, BigDecimal v) {
         ZonedDecimal.encode(Assign.fit(v, f.digits(), f.scale(), f.signed(), false), comm, f.offset(),
                 f.digits(), f.scale(), sign(f));
     }
@@ -131,7 +131,7 @@ public final class UpdateAccount {
     }
 
     /** DB2-DATE-REFORMAT ('YYYY-MM-DD', ISO date format assumed) into a DD MM YYYY group starting at {@code day}. */
-    private static void date(byte[] comm, FieldSpec day, Date d) {
+    static void date(byte[] comm, FieldSpec day, Date d) {
         String iso = d.toLocalDate().toString();
         String ddmmyyyy = iso.substring(8, 10) + iso.substring(5, 7) + iso.substring(0, 4);
         Text.encode(ddmmyyyy, comm, day.offset(), 8, Ebcdic.CP037);
