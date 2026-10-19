@@ -26,6 +26,13 @@ def outputDir = project.findProperty('outputDir') ?: layout.buildDirectory.get()
 jar {
     archiveBaseName = 'nazare-ims-jmp'
     destinationDirectory = file(outputDir)
+    // The JMP classpath (dfsjvmpr.props) names this one jar, so the copybook bridge travels inside it.
+    from { configurations.runtimeClasspath.filter { it.name.startsWith('copybook-bridge') }.collect { zipTree(it) } }
+}
+
+test {
+    useJUnitPlatform()
+    systemProperty 'bankz.repoRoot', projectDir.toPath().resolve('../../../..').normalize().toString()
 }
 
 repositories {
@@ -37,4 +44,8 @@ dependencies {
     implementation 'com.ibm.ims:udb:15.166'
     implementation 'com.ibm.jzos:ibmjzos:2.4.11.3'
     implementation 'javax.xml.bind:jaxb-api:2.4.0-b180830.0359'
+    implementation 'com.ibm.bankofz:copybook-bridge:1.0.0-SNAPSHOT'
+    testImplementation platform('org.junit:junit-bom:5.10.2')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }

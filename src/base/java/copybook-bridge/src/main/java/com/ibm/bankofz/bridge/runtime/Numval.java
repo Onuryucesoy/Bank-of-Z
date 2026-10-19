@@ -1,4 +1,4 @@
-package com.ibm.bankofz.loaders;
+package com.ibm.bankofz.bridge.runtime;
 
 import java.math.BigDecimal;
 
@@ -7,11 +7,11 @@ import java.math.BigDecimal;
  * digits with at most one decimal point. All blanks yield 0. Any other argument is undefined in
  * COBOL; here it is rejected so the Java loader stops instead of inserting an unpredictable value.
  */
-final class Numval {
+public final class Numval {
     private Numval() {
     }
 
-    static BigDecimal of(String arg) {
+    public static BigDecimal of(String arg) {
         String s = arg.strip();
         if (s.isEmpty()) {
             return BigDecimal.ZERO;
