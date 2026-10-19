@@ -4,6 +4,7 @@ dependencies {
     implementation project(':copybook-bridge')
     compileOnly 'com.ibm.cics:com.ibm.cics.server:2.100.0-6.2'
     testImplementation 'com.ibm.cics:com.ibm.cics.server:2.100.0-6.2'
+    testImplementation 'com.h2database:h2:2.2.224'
 }
 
 tasks.withType(JavaCompile).configureEach {
