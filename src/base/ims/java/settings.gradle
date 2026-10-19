@@ -1,0 +1,4 @@
+rootProject.name = 'nazare-ims-jmp'
+includeBuild('../../java') {
+    name = 'bankz-java'
+}

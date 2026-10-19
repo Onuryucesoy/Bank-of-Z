@@ -34,3 +34,5 @@ scripts/update-frontend-file-zos.sh
 
 # Java migration modules
 src/base/java/**/build/
+src/base/ims/java/build/
+src/base/ims/java/.gradle/

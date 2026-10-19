@@ -1,5 +1,6 @@
 package com.ibm.bankofz.loaders;
 
+import com.ibm.bankofz.bridge.runtime.Numval;
 import com.ibm.bankofz.bridge.runtime.Assign;
 import com.ibm.bankofz.bridge.runtime.Binary;
 import com.ibm.bankofz.bridge.runtime.Ebcdic;
