@@ -31,3 +31,6 @@ scripts/update-frontend-file-zos.sh
 **/datasets.yaml
 .gradle/
 .bobz
+
+# Java migration modules
+src/base/java/**/build/

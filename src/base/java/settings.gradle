@@ -1,0 +1,7 @@
+/*
+ * Java side of the Bank of Z COBOL/PL-I -> Java migration.
+ * Each subproject builds a jar that runs on z/OS (JZOS batch, IMS JMP/JBP, CICS JVM server).
+ */
+rootProject.name = 'bankz-java'
+
+include 'copybook-bridge'

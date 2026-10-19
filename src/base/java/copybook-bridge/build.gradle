@@ -1,0 +1,13 @@
+description = 'Byte-exact Java views of the Bank of Z copybooks (COMMAREA / IMS segment / message bridge)'
+
+def repoRoot = rootProject.projectDir.toPath().resolve('../../..').normalize()
+
+// Regenerates the committed record classes from the copybooks.
+// CopybookDriftTest fails the build if the committed classes no longer match the copybooks.
+tasks.register('generateCopybooks', JavaExec) {
+    group = 'build'
+    description = 'Regenerate src/main/java/com/ibm/bankofz/bridge/copybook from src/base/{cics,ims}/copy'
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'com.ibm.bankofz.bridge.gen.Generate'
+    args repoRoot.toString(), file('src/main/java').absolutePath
+}
